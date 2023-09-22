@@ -1,7 +1,7 @@
 /*variables*/
 :root {
     --accent1: #a667e5;
-    --accent2a: #52277c;
+    --accent1a: #52277c;
     --accent2: #e57667;
     --accent2a: #993628;
     --font: #efefef;
@@ -15,7 +15,21 @@ body {
 
 /*header*/
 
-/*quiz pad*/
+/*quiz tablet*/
+.quiz-tablet {
+    max-width: 1000px;
+    background-color: #aaa;
+    border-radius: 20px;
+}
 
+.image-container,
+.question,
+.answer {
+    background-color: var(--accent1);
+    border-radius: 20px;
+    -webkit-box-shadow: 3px 4px 21px -10px rgba(0,0,0,0.75);
+    -moz-box-shadow: 3px 4px 21px -10px rgba(0,0,0,0.75);
+    box-shadow: 3px 4px 21px -10px rgba(0,0,0,0.75);
+}
 
 /*footer*/
