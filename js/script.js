@@ -19,26 +19,54 @@ let answerBtn4 = document.querySelector(".select-d");
 //
 //
 // NASA API FETCH FUNCTION
-function fetchAndDisplayImageForKeyword(keyword, index) {
-  const queryURL = `https://images-api.nasa.gov/search?keywords=${keyword}&media_type=image`;
+f// Function to fetch and display images from NASA API based on the NASA ID
+function fetchAndDisplayImageForNASAId(nasaId, index) {
+  const apiUrl = `https://images-api.nasa.gov/asset/${nasaId}`;
 
-  fetch(queryURL)
+  fetch(apiUrl)
     .then(function (response) {
       return response.json();
     })
     .then(function (data) {
       if (data.collection.items.length > 0) {
-        const imgURL = data.collection.items[0].links[0].href;
-        const imgEl = document.createElement("img");
-        imgEl.setAttribute("src", imgURL);
-        imgEl.setAttribute("alt", `${keyword} Image`);
-        questionImageElement.innerHTML = ""; // Clear previous images
+        const imgURL = data.collection.items[0].href;
+        const imgEl = document.createElement('img');
+        imgEl.setAttribute('src', imgURL);
+        imgEl.setAttribute('alt', `NASA Image`);
+        questionImageElement.innerHTML = ''; // Clear previous images
         questionImageElement.appendChild(imgEl);
       }
     })
     .catch(function (error) {
-      console.error(`Error fetching data for ${keyword} from NASA API:`, error);
+      console.error(`Error fetching image data for NASA ID ${nasaId} from NASA API:`, error);
     });
+}
+
+function getQuestion() {
+  let currentQuestion = questions[currentQuestionIndex];
+  let titleElement = document.getElementById("question-title");
+  titleElement.textContent = currentQuestion.title;
+
+  const nasaId = currentQuestion.nasaId;
+
+  fetchAndDisplayImageForNASAId(nasaId, currentQuestionIndex);
+
+  // Clear previous answer choices
+  choicesElement.innerHTML = "";
+
+  currentQuestion.choices.forEach(function (choice, index) {
+    let choiceButton = document.createElement("button");
+
+    choiceButton.setAttribute("class", "choice");
+    choiceButton.setAttribute("value", choice);
+
+    choiceButton.textContent = `${index + 1}. ${choice}`;
+    choiceButton.classList.add("choice");
+
+    choiceButton.addEventListener("click", questionClick);
+
+    choicesElement.appendChild(choiceButton);
+  });
 }
 //
 //
