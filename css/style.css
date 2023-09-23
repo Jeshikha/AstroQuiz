@@ -2,34 +2,57 @@
 :root {
     --accent1: #a667e5;
     --accent1a: #52277c;
-    --accent2: #e57667;
-    --accent2a: #993628;
+    --accent2: #ea5656;
+    --accent2a: #8b3428;
     --font: #efefef;
   }
 
 /*page styles*/  
 body {
     background-color: #090909;
+    background-image: url("../images/star-bg.jpg");
+    background-attachment: fixed;
     color: var(--font);
 }
-
-/*header*/
 
 /*quiz tablet*/
 .quiz-tablet {
     max-width: 1000px;
     background-color: #aaa;
     border-radius: 20px;
+    -webkit-box-shadow: 6px 8px 21px 0px rgba(0,0,0,1);
+    -moz-box-shadow: 6px 8px 21px 0px rgba(0,0,0,1);
+    box-shadow: 6px 8px 21px 0px rgba(0,0,0,1);
 }
 
-.image-container,
 .question,
 .answer {
     background-color: var(--accent1);
+    border: 1px solid var(--accent1a);
     border-radius: 20px;
     -webkit-box-shadow: 3px 4px 21px -10px rgba(0,0,0,0.75);
     -moz-box-shadow: 3px 4px 21px -10px rgba(0,0,0,0.75);
     box-shadow: 3px 4px 21px -10px rgba(0,0,0,0.75);
+    font-size: 1.5em;
 }
 
-/*footer*/
+.question {
+    background-color: var(--accent2);
+    border: 1px solid var(--accent2a);
+}
+
+.image-container img {
+    border-radius: 20px;
+    max-height: 400px;
+    border: 3px solid var(--accent1a);
+}
+
+.answer {
+    cursor: pointer;    
+}
+
+/*buttons*/
+
+#btn-start-quiz {
+    font-size: 2em;
+}
