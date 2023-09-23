@@ -5,14 +5,24 @@
     --accent2: #ea5656;
     --accent2a: #8b3428;
     --font: #efefef;
-  }
+}
 
-/*page styles*/  
-body {
+/*page styles*/
+/* differentiating body homepage and quizpage */
+body#quizpage {
     background-color: #090909;
     background-image: url("../images/star-bg.jpg");
     background-attachment: fixed;
     color: var(--font);
+}
+
+body#homepage {
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    /* This ensures the entire image covers the viewport */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 /*quiz tablet*/
@@ -20,9 +30,9 @@ body {
     max-width: 1000px;
     background-color: #aaa;
     border-radius: 20px;
-    -webkit-box-shadow: 6px 8px 21px 0px rgba(0,0,0,1);
-    -moz-box-shadow: 6px 8px 21px 0px rgba(0,0,0,1);
-    box-shadow: 6px 8px 21px 0px rgba(0,0,0,1);
+    -webkit-box-shadow: 6px 8px 21px 0px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 6px 8px 21px 0px rgba(0, 0, 0, 1);
+    box-shadow: 6px 8px 21px 0px rgba(0, 0, 0, 1);
 }
 
 .question,
@@ -30,9 +40,9 @@ body {
     background-color: var(--accent1);
     border: 1px solid var(--accent1a);
     border-radius: 20px;
-    -webkit-box-shadow: 3px 4px 21px -10px rgba(0,0,0,0.75);
-    -moz-box-shadow: 3px 4px 21px -10px rgba(0,0,0,0.75);
-    box-shadow: 3px 4px 21px -10px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 3px 4px 21px -10px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 3px 4px 21px -10px rgba(0, 0, 0, 0.75);
+    box-shadow: 3px 4px 21px -10px rgba(0, 0, 0, 0.75);
     font-size: 1.5em;
 }
 
@@ -48,7 +58,7 @@ body {
 }
 
 .answer {
-    cursor: pointer;    
+    cursor: pointer;
 }
 
 /*buttons*/
