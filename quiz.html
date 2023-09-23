@@ -20,11 +20,11 @@
     </header>
     <main class="container-md px-4 quiz-tablet mt-5 p-4">
         <div class="row">
-            <div class="col-xs-12 col-sm-10 order-sm-2">
-                <div class="image-container text-center">
+            <section class="col-xs-12 col-sm-10 order-sm-2">
+                <div class="image-container tablet-box text-center">
                     <img src="./images/moon-and-earth-from-iss.jpg">
                 </div>
-                <div class="question mt-3 mb-3 p-4">
+                <div class="question tablet-box mt-3 mb-3 p-4">
                     Sample question to see layout. Delete when JS is in. What is the weather today?
                 </div>
                 <div class="answers">
@@ -41,10 +41,13 @@
                         Vivamus sed cursus orci.
                     </div>
                 </div>
-            </div>
-            <div class="col-xs-12 col-sm-2 order-sm-1">
-                modal button, , progress rocket
-            </div>
+            </section>
+            <aside class="col-xs-12 col-sm-2 order-sm-1">
+                <!--these probably want different styling and positions but are here for functionality for now-->
+                <button id="btn-more-info" class="btn btn-primary" disabled>Learn More</button>
+                <button id="btn-abort" class="btn btn-danger"><a href="index.html">Abort Mission</a></button>
+                <button id="next-question" class="btn btn-success">Next Question</button>
+            </aside>
         </div>
     </main>
     <footer class="container mt-4">

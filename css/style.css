@@ -16,6 +16,13 @@ body#quizpage {
     color: var(--font);
 }
 
+body#quizend {
+    background-color: #090909;
+    background-image: url("../images/star-bg.jpg");
+    background-attachment: fixed;
+    color: var(--font);
+}
+
 body#homepage {
     margin: 0;
     padding: 0;
