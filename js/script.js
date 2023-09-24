@@ -14,6 +14,7 @@ let answerBtn3 = document.querySelector("#select-c");
 let answerBtn4 = document.querySelector("#select-d");
 let nextQuestion = document.getElementById("next-question");
 let abortMission = document.getElementById("btn-abort");
+let questionImageElement = document.getElementById("question-image"); // Added this line
 //
 //
 // GAME VARIABLE SETUP
@@ -24,8 +25,7 @@ let questionScore = 100;
 //
 //
 // ----------------------------- FUNCTION DECLARATIONS ----------------------------------------
-//
-// NASA API FUNCTION
+
 //
 //
 // MAIN USER LOGIC
@@ -79,6 +79,8 @@ function injectQuestions(n) {
   answerBtn3.textContent = questions[n].choices[2];
   answerBtn4.textContent = questions[n].choices[3];
 
+  // Fetch and display the image for the current question
+  fetchAndDisplayImageForNASAId(questions[n].nasaId, n);
   console.log("question no. = " + questionNumber); // Testing purposes. Remove once code finished.
 }
 injectQuestions(questionNumber);
@@ -106,4 +108,25 @@ function gameOver() {
   window.location.href = "end.html";
 }
 //
-//
+// NASA API FETCH FUNCTION
+function fetchAndDisplayImageForNASAId(nasaId, index) {
+  const apiUrl = `https://images-api.nasa.gov/asset/${nasaId}`;
+
+  fetch(apiUrl)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      if (data.collection.items.length > 0) {
+        const imgURL = data.collection.items[0].href;
+        const imgEl = document.createElement('img');
+        imgEl.setAttribute('src', imgURL);
+        imgEl.setAttribute('alt', `NASA Image`);
+        questionImageElement.innerHTML = ''; // Clear previous images
+        questionImageElement.appendChild(imgEl);
+      }
+    })
+    .catch(function (error) {
+      console.error(`Error fetching image data for NASA ID ${nasaId} from NASA API:`, error);
+    });
+}
