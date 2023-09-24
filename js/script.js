@@ -25,6 +25,8 @@ let questionScore = 100;
 //
 // ----------------------------- FUNCTION DECLARATIONS ----------------------------------------
 //
+// NASA API FUNCTION
+//
 //
 // MAIN USER LOGIC
 //
@@ -44,13 +46,13 @@ function answerSelect() {
 
     if (questions[questionNumber].answer === firstLetter) {
       totalScore += questionScore;
-      this.style.backgroundColor = "green";
       console.log("totalScore: " + totalScore); // Testing purposes. Remove once code finished.
       if (questionNumber < questions.length - 1) {
         questionNumber++;
         injectQuestions(questionNumber);
         questionScore = 100;
         buttons.forEach((button) => {
+          // Reset button colours when question changes
           button.style.backgroundColor = "#a667e5";
         });
       } else {
@@ -65,6 +67,7 @@ function answerSelect() {
 }
 answerSelect();
 //
+
 //
 //
 // INJECT QUESTION FUNCTION
@@ -92,7 +95,6 @@ function checkAnswerClicked(button1) {
 }
 //
 //
-//
 // GAME OVER FUNCTION
 //
 function gameOver() {
@@ -101,15 +103,7 @@ function gameOver() {
   buttons.forEach((button) => {
     button.style.backgroundColor = "#aaa";
   });
+  window.location.href = "end.html";
 }
 //
 //
-// NEXT QUESTION FUNCTION
-//
-// DISPLAY INFO MODAL FUNCTION
-//
-//
-// GAMEOVER FUNCTION
-//
-//
-// DISPLAY SCORE FUNCTION
