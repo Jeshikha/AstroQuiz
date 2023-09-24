@@ -1,25 +1,32 @@
 "use strict";
 
-// INITIALISE VARIABLES
+// ------------------------------- INITIALISE VARIABLES ---------------------------------------
 //
 // GENERAL VARIABLE SETUPS
-let startButtonPress = document.querySelector("#####");
-let buttonChoice = document.getElementById("#####");
+let optionClick = document.querySelector(".clickable");
 //
 //
 // QUESTION BUTTON SELECTOR VARIABLES
-let quizQuestion = document.getElementById("#####");
+let quizQuestion = document.getElementById("question-box");
 let answerBtn1 = document.querySelector(".select-a");
 let answerBtn2 = document.querySelector(".select-b");
 let answerBtn3 = document.querySelector(".select-c");
 let answerBtn4 = document.querySelector(".select-d");
+let nextQuestion = document.getElementById("next-question");
+let abortMission = document.getElementById("btn-abort");
 //
 //
-// START BUTTON FUNCTION
+// GAME VARIABLE SETUP
+let questionNumber = 0;
+let totalScore = 0;
+let firstLetter;
+let questionScore = 100;
 //
+//
+// ----------------------------- FUNCTION DECLARATIONS ----------------------------------------
 //
 // NASA API FETCH FUNCTION
-f// Function to fetch and display images from NASA API based on the NASA ID
+// Function to fetch and display images from NASA API based on the NASA ID
 function fetchAndDisplayImageForNASAId(nasaId, index) {
   const apiUrl = `https://images-api.nasa.gov/asset/${nasaId}`;
 
@@ -30,15 +37,18 @@ function fetchAndDisplayImageForNASAId(nasaId, index) {
     .then(function (data) {
       if (data.collection.items.length > 0) {
         const imgURL = data.collection.items[0].href;
-        const imgEl = document.createElement('img');
-        imgEl.setAttribute('src', imgURL);
-        imgEl.setAttribute('alt', `NASA Image`);
-        questionImageElement.innerHTML = ''; // Clear previous images
+        const imgEl = document.createElement("img");
+        imgEl.setAttribute("src", imgURL);
+        imgEl.setAttribute("alt", `NASA Image`);
+        questionImageElement.innerHTML = ""; // Clear previous images
         questionImageElement.appendChild(imgEl);
       }
     })
     .catch(function (error) {
-      console.error(`Error fetching image data for NASA ID ${nasaId} from NASA API:`, error);
+      console.error(
+        `Error fetching image data for NASA ID ${nasaId} from NASA API:`,
+        error
+      );
     });
 }
 
