@@ -1,7 +1,7 @@
 let questions = [
     {
         title: "Earth:\nWhat is the average diameter of Earth in kilometers?",
-        nasaId: "PIA18033",
+        nasaId: "PIA00114",
         choices: [
             "A) Approximately 12,742 kilometers",
             "B) Approximately 6,371 kilometers",
@@ -13,7 +13,7 @@ let questions = [
     },
     {
         title: "Moon:\nWhat is the average temperature on the Moon's surface?",
-        keyword: "Moon spaceship",
+        nasaId: "PIA00225",
         choices: [
             "A) -50°C",
             "B) 20°C",
@@ -25,7 +25,7 @@ let questions = [
     },
     {
         title: "Mercury:\nWhich feature on Mercury is similar to the Moon's 'seas' but is named differently?",
-        keyword: "Mercury Maria",
+        nasaId: "GSFC_20171208_Archive_e001545",
         choices: [
             "A) Oceans",
             "B) Lakes",
@@ -37,7 +37,7 @@ let questions = [
     },
     {
         title: "Venus:\nWhich of the following gases is most abundant in Venus's atmosphere?",
-        keyword: "Venus gas",
+        nasaId: "GSFC_20171208_Archive_e001734",
         choices: [
             "A) Oxygen",
             "B) Nitrogen",
@@ -49,7 +49,7 @@ let questions = [
     },
     {
         title: "Mars:\nWhich spacecraft successfully landed on Mars in 2021 and began exploring the planet's surface?",
-        keyword: "Mars planet satellite",
+        nasaId: "PIA25658",
         choices: [
             "A) Voyager 1",
             "B) Curiosity",
@@ -61,7 +61,7 @@ let questions = [
     },
     {
         title: "Jupiter:\nWhat is the largest moon of Jupiter?",
-        keyword: "Ganymede",
+        nasaId: "hubble-captures-vivid-auroras-in-jupiters-atmosphere_28000029525_o",
         choices: [
             "A) Europa",
             "B) Io",
@@ -73,7 +73,7 @@ let questions = [
     },
     {
         title: "Saturn:\nWhat is the name of the largest and most famous ring system around Saturn?",
-        keyword: "Saturn ring",
+        nasaId: "PIA04913",
         choices: [
             "A) The Halo Rings",
             "B) The Belt Rings",
@@ -85,7 +85,7 @@ let questions = [
     },
     {
         title: "Uranus:\nWhich unique feature of Uranus sets it apart from most other planets in our solar system?",
-        keyword: "Nebulla",
+        nasaId: "stsci-h-p1906c-f-514x514.a",
         choices: [
             "A) It has no atmosphere",
             "B) It rotates on its side",
@@ -97,7 +97,7 @@ let questions = [
     },
     {
         title: "Neptune:\nWhat is the largest storm system on Neptune, similar to Jupiter's Great Red Spot?",
-        keyword: "Neptune Vortex",
+        nasaId: "PIA02210",
         choices: [
             "A) Neptune's Cyclone",
             "B) Neptune's Hurricane",
@@ -109,7 +109,7 @@ let questions = [
     },
     {
         title: "Pluto:\nWhich spacecraft conducted a close flyby of Pluto in 2015, providing valuable data about the dwarf planet?",
-        keyword: "Pluto",
+        nasaId: "PIA19952",
         choices: [
             "A) Cassini",
             "B) New Horizons",
@@ -120,4 +120,3 @@ let questions = [
         userAnswer: null
     }
 ];
-

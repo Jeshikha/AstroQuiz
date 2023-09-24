@@ -5,14 +5,23 @@
     --accent2: #ea5656;
     --accent2a: #8b3428;
     --font: #efefef;
-  }
+}
 
-/*page styles*/  
-body {
+/*page styles*/
+body#quizpage {
     background-color: #090909;
     background-image: url("../images/star-bg.jpg");
     background-attachment: fixed;
     color: var(--font);
+}
+
+body#homepage {
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    /* This ensures the entire image covers the viewport */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 /*quiz tablet*/
@@ -20,9 +29,9 @@ body {
     max-width: 1000px;
     background-color: #aaa;
     border-radius: 20px;
-    -webkit-box-shadow: 6px 8px 21px 0px rgba(0,0,0,1);
-    -moz-box-shadow: 6px 8px 21px 0px rgba(0,0,0,1);
-    box-shadow: 6px 8px 21px 0px rgba(0,0,0,1);
+    -webkit-box-shadow: 6px 8px 21px 0px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 6px 8px 21px 0px rgba(0, 0, 0, 1);
+    box-shadow: 6px 8px 21px 0px rgba(0, 0, 0, 1);
 }
 
 .question,
@@ -30,9 +39,9 @@ body {
     background-color: var(--accent1);
     border: 1px solid var(--accent1a);
     border-radius: 20px;
-    -webkit-box-shadow: 3px 4px 21px -10px rgba(0,0,0,0.75);
-    -moz-box-shadow: 3px 4px 21px -10px rgba(0,0,0,0.75);
-    box-shadow: 3px 4px 21px -10px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 3px 4px 21px -10px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 3px 4px 21px -10px rgba(0, 0, 0, 0.75);
+    box-shadow: 3px 4px 21px -10px rgba(0, 0, 0, 0.75);
     font-size: 1.5em;
 }
 
@@ -48,11 +57,159 @@ body {
 }
 
 .answer {
-    cursor: pointer;    
+    cursor: pointer;
 }
 
 /*buttons*/
 
-#btn-start-quiz {
-    font-size: 2em;
+#btn-startquiz {
+    font-size: 2em !important;
+    background-color: #B83BCE !important;
+    border-color: #B83BCE;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+}
+
+/* Header editing */
+h1 {
+    font-size: 4rem;
+    background-color: rgba(0, 0, 0, 0.279);
+    color: white;
+    margin-bottom: 0;
+    display: inline-block;
+
+}
+
+p {
+    background-color: rgba(0, 0, 0, 0.427);
+    color: white;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-top: 0;
+}
+
+/* Star Wars-style opening crawl container */
+.star-wars {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    /* Adjusting the height as needed */
+    overflow: hidden;
+    color: #feda4a;
+    font-family: 'Pathway Gothic One', sans-serif;
+    font-size: 100%;
+    font-weight: 700;
+    letter-spacing: 4px;
+    line-height: 150%;
+    perspective: 400px;
+    text-align: justify;
+    position: relative;
+    padding: 20px;
+    /* Adjusting the padding as needed */
+
+}
+
+/* Adjusting the crawl positioning */
+.crawl {
+    transform-origin: 50% 50%;
+    animation: crawl 160s linear infinite;
+    /* Slower crawl animation */
+    position: relative;
+    top: 50%;
+    text-align: center;
+    transform: translateY(-50%);
+    line-height: 3;
+    /* Adjusting line height as needed */
+    height: 30vh;
+    /* Adjusting the height as desired */
+}
+
+.crawl>.title {
+    font-size: 90%;
+    text-align: center;
+}
+
+
+
+@keyframes crawl {
+    0% {
+        top: 0;
+        transform: rotateX(20deg) translateZ(0);
+        opacity: 0;
+    }
+
+    1% {
+        opacity: 1;
+    }
+
+    99% {
+        opacity: 1;
+    }
+
+    100% {
+        top: -6000px;
+        transform: rotateX(25deg) translateZ(-2500px);
+        opacity: 0;
+    }
+}
+
+
+/* Styling the crawl text within the container */
+.crawl p {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #feda4a;
+}
+
+/* Custom CSS for the navigation bar */
+.navbar {
+    margin-bottom: 0;
+    border-bottom: none;
+}
+
+.navbar-brand {
+    font-size: 30px;
+    margin-left: 15px;
+    color: #d95fee;
+    /* Adjusting the font size of the brand/logo */
+}
+
+.navbar-toggler-icon {
+    color: #ffffff5a !important;
+
+}
+
+.nav-link {
+    color: #fffffff1 !important;
+    margin-right: 40px;
+    background-color: #B83BCE;
+    font-weight: bold;
+
+}
+
+.nav-link:hover {
+    color: #B83BCE !important;
+    background-color: rgb(251, 250, 250);
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.navbar-dark.bg-dark {
+    background-color: #00000032 !important;
+    /* Background color of the navbar */
+}
+
+.navbar-nav {
+    padding-left: 30rem !important;
+}
+
+.navbar-brand img {
+    margin-right: 10px;
+}
+
+.dropdown-menu-right .dropdown-item:hover {
+    background-color: #B83BCE !important;
+    color: white !important;
 }
