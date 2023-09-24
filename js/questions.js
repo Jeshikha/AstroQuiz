@@ -8,7 +8,7 @@ let questions = [
       "C) Approximately 20,000 kilometers",
       "D) Approximately 16,000 kilometers",
     ],
-    answer: "B",
+    answer: "A",
     userAnswer: null,
   },
   {

@@ -24,6 +24,13 @@ body#homepage {
     background-attachment: fixed;
 }
 
+body#quizend {
+    background-color: #090909;
+    background-image: url("../images/star-bg.jpg");
+    background-attachment: fixed;
+    color: var(--font);
+}
+
 /*quiz tablet*/
 .quiz-tablet {
     max-width: 1000px;
@@ -212,4 +219,18 @@ p {
 .dropdown-menu-right .dropdown-item:hover {
     background-color: #B83BCE !important;
     color: white !important;
+}
+
+#question-image {
+    text-align: center;
+    /* Center-align the images within the div */
+}
+
+#question-image img {
+    max-width: 100%;
+    /* Setting the maximum width of the image to 100% of its container */
+    height: auto;
+    /* Allowing the image's height to adjust proportionally based on its width */
+    margin-top: 10px;
+    /* Adding some top margin to separate the image from the question */
 }
