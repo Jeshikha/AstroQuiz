@@ -2,17 +2,23 @@
 :root {
     --accent1: #a667e5;
     --accent1a: #52277c;
-    --accent2: #ea5656;
-    --accent2a: #8b3428;
+    --accent2: #5597cc;
+    --accent2a: #316997;
+    /*#2f8ad5*/
+    --errorred: #ea5656;
+    --correctgreen: #8fc254;
     --font: #efefef;
+    --curvedcorner1: 20px;
+    --curvedcorner2: 10px;
 }
 
 /*page styles*/
-body#quizpage {
+body {
     background-color: #090909;
     background-image: url("../images/star-bg.jpg");
     background-attachment: fixed;
     color: var(--font);
+    font-size: 1.1rem;
 }
 
 body#homepage {
@@ -21,40 +27,35 @@ body#homepage {
     background-size: cover;
     /* This ensures the entire image covers the viewport */
     background-repeat: no-repeat;
-    background-attachment: fixed;
-}
-
-body#quizend {
-    background-color: #090909;
-    background-image: url("../images/star-bg.jpg");
-    background-attachment: fixed;
-    color: var(--font);
 }
 
 /*quiz tablet*/
 .quiz-tablet {
     max-width: 1000px;
     background-color: #aaa;
-    border-radius: 20px;
+    border-radius: var(--curvedcorner1);
     -webkit-box-shadow: 6px 8px 21px 0px rgba(0, 0, 0, 1);
     -moz-box-shadow: 6px 8px 21px 0px rgba(0, 0, 0, 1);
     box-shadow: 6px 8px 21px 0px rgba(0, 0, 0, 1);
 }
 
-.question,
-.answer {
-    background-color: var(--accent1);
-    border: 1px solid var(--accent1a);
-    border-radius: 20px;
+.tablet-box {
+    border-radius: var(--curvedcorner1);
     -webkit-box-shadow: 3px 4px 21px -10px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 3px 4px 21px -10px rgba(0, 0, 0, 0.75);
     box-shadow: 3px 4px 21px -10px rgba(0, 0, 0, 0.75);
-    font-size: 1.5em;
-}
-
-.question {
     background-color: var(--accent2);
     border: 1px solid var(--accent2a);
+}
+
+.tablet-box-alt {
+    background-color: var(--accent1);
+    border: 1px solid var(--accent1a);
+}
+
+.question,
+.answer {
+    font-size: 1.5em;
 }
 
 .image-container img {
@@ -78,6 +79,7 @@ body#quizend {
 }
 
 /* Header editing */
+
 h1 {
     font-size: 4rem;
     background-color: rgba(0, 0, 0, 0.279);
@@ -87,7 +89,7 @@ h1 {
 
 }
 
-p {
+.intro-text p {
     background-color: rgba(0, 0, 0, 0.427);
     color: white;
     justify-content: center;
