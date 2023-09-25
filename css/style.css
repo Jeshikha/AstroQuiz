@@ -4,7 +4,7 @@
     --accent1a: #52277c;
     --accent2: #5597cc;
     --accent2a: #316997;
-    /*#2f8ad5*/
+    --homepagepurple: #B83BCE;
     --errorred: #ea5656;
     --correctgreen: #8fc254;
     --font: #efefef;
@@ -15,7 +15,6 @@
 /*page styles*/
 body {
     background-color: #090909;
-    background-image: url("../images/star-bg.jpg");
     background-attachment: fixed;
     color: var(--font);
     font-size: 1.1rem;
@@ -29,58 +28,66 @@ body#homepage {
     background-repeat: no-repeat;
 }
 
-/*quiz tablet*/
-.quiz-tablet {
-    max-width: 1000px;
-    background-color: #aaa;
-    border-radius: var(--curvedcorner1);
-    -webkit-box-shadow: 6px 8px 21px 0px rgba(0, 0, 0, 1);
-    -moz-box-shadow: 6px 8px 21px 0px rgba(0, 0, 0, 1);
-    box-shadow: 6px 8px 21px 0px rgba(0, 0, 0, 1);
+body#quizpage,
+body#endpage {
+    background-image: url("../images/star-bg.jpg");
 }
 
-.tablet-box {
-    border-radius: var(--curvedcorner1);
-    -webkit-box-shadow: 3px 4px 21px -10px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 3px 4px 21px -10px rgba(0, 0, 0, 0.75);
-    box-shadow: 3px 4px 21px -10px rgba(0, 0, 0, 0.75);
-    background-color: var(--accent2);
-    border: 1px solid var(--accent2a);
+/* navigation bar */
+.navbar {
+    margin-bottom: 0;
+    border-bottom: none;
 }
 
-.tablet-box-alt {
-    background-color: var(--accent1);
-    border: 1px solid var(--accent1a);
+.navbar-brand {
+    font-size: 30px;
+    margin-left: 15px;
+    color: var(--accent1); /*need to choose a purple*/
+    color: #d95fee;
+    /* Adjusting the font size of the brand/logo */
 }
 
-.question,
-.answer {
-    font-size: 1.5em;
+.navbar-toggler-icon {
+    color: #ffffff5a !important;
+
 }
 
-.image-container img {
-    border-radius: 20px;
-    max-height: 400px;
-    border: 3px solid var(--accent1a);
+.nav-link {
+    color: #fffffff1 !important;
+    margin-right: 40px;
+    background-color: var(--homepagepurple);
+    font-weight: bold;
+
 }
 
-.answer {
-    cursor: pointer;
+.nav-link:hover {
+    color: var(--accent1) !important; /*need to choose a purple*/
+    color: var(--homepagepurple) !important;
+    background-color: rgb(251, 250, 250);
+    transition: color 0.3s, background-color 0.3s;
 }
 
-/*buttons*/
-
-#btn-startquiz {
-    font-size: 2em !important;
-    background-color: #B83BCE !important;
-    border-color: #B83BCE;
-    margin-top: 3rem;
-    margin-bottom: 1rem;
+.navbar-dark.bg-dark {
+    background-color: #00000032 !important;
+    /* Background color of the navbar */
 }
 
-/* Header editing */
+.navbar-nav {
+    padding-left: 30rem !important;
+}
 
-h1 {
+.navbar-brand img {
+    margin-right: 10px;
+}
+
+.dropdown-menu-right .dropdown-item:hover {
+    background-color: var(--homepagepurple) !important;
+    color: white !important;
+}
+
+/* Home page */
+
+#homepage h1 {
     font-size: 4rem;
     background-color: rgba(0, 0, 0, 0.279);
     color: white;
@@ -89,7 +96,8 @@ h1 {
 
 }
 
-.intro-text p {
+.intro-text p,
+.star-wars p {
     background-color: rgba(0, 0, 0, 0.427);
     color: white;
     justify-content: center;
@@ -173,66 +181,70 @@ h1 {
     color: #feda4a;
 }
 
-/* Custom CSS for the navigation bar */
-.navbar {
-    margin-bottom: 0;
-    border-bottom: none;
+
+/*quiz page*/
+
+.quiz-tablet {
+    max-width: 1000px;
+    background-color: #aaa;
+    border-radius: var(--curvedcorner1);
+    box-shadow: 6px 8px 21px 0px rgba(0, 0, 0, 1);
 }
 
-.navbar-brand {
-    font-size: 30px;
-    margin-left: 15px;
-    color: #d95fee;
-    /* Adjusting the font size of the brand/logo */
+.tablet-box {
+    border-radius: var(--curvedcorner1);
+    box-shadow: 3px 4px 21px -10px rgba(0, 0, 0, 0.5);
+    background-color: var(--accent2);
+    border: 1px solid var(--accent2a);
 }
 
-.navbar-toggler-icon {
-    color: #ffffff5a !important;
-
+.tablet-box-alt {
+    background-color: var(--accent1);
+    border: 1px solid var(--accent1a);
 }
 
-.nav-link {
-    color: #fffffff1 !important;
-    margin-right: 40px;
-    background-color: #B83BCE;
-    font-weight: bold;
-
+.question,
+.answer {
+    font-size: 1.4rem;
 }
 
-.nav-link:hover {
-    color: #B83BCE !important;
-    background-color: rgb(251, 250, 250);
-    transition: color 0.3s, background-color 0.3s;
-}
-
-.navbar-dark.bg-dark {
-    background-color: #00000032 !important;
-    /* Background color of the navbar */
-}
-
-.navbar-nav {
-    padding-left: 30rem !important;
-}
-
-.navbar-brand img {
-    margin-right: 10px;
-}
-
-.dropdown-menu-right .dropdown-item:hover {
-    background-color: #B83BCE !important;
-    color: white !important;
-}
-
-#question-image {
-    text-align: center;
-    /* Center-align the images within the div */
-}
-
-#question-image img {
+.image-container img {
+    border-radius: var(--curvedcorner1);
+    max-height: 550px;
     max-width: 100%;
-    /* Setting the maximum width of the image to 100% of its container */
-    height: auto;
-    /* Allowing the image's height to adjust proportionally based on its width */
-    margin-top: 10px;
-    /* Adding some top margin to separate the image from the question */
+    border: 5px solid var(--accent2a);
+}
+
+.question {
+    border-width: 3px;
+}
+
+.answer {
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 8px var(--accent1a);
+}
+
+.answer:hover,
+.answer:focus {
+    opacity: 0.90;
+}
+
+.answer:active {
+    box-shadow: 0 4px var(--accent1a);
+    transform: translateY(4px);
+}
+
+/*end page*/
+
+
+
+/*buttons*/
+
+#btn-startquiz {
+    font-size: 2em !important;
+    background-color: var(--homepagepurple) !important;
+    border-color: var(--homepagepurple);
+    margin-top: 3rem;
+    margin-bottom: 1rem;
 }
