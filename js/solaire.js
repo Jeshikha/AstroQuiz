@@ -1,22 +1,38 @@
 //let queryURL = `https://api.le-systeme-solaire.net/rest/bodies/${solaireId}`;
-let queryURL = `https://api.le-systeme-solaire.net/rest/bodies/saturne`;
+let queryURL = `https://api.le-systeme-solaire.net/rest/bodies/earth`;
 let planetName;
 let planetMoons;
 let planetOrbit;
+let planetTemp;
+let orbitee;
 let modalDYK = document.querySelector(".modal-dyk");
 
 function buildDYK () {
     let dyk = "";
 
-    if (planetMoons === 0 && planetName != "Moon") {
-        dyk+= `${planetName}`;
-    } else if (planetMoons === 1) {
-        dyk+= `${planetName} has 1 moon and`;
-    } else if (planetMoons > 1) {
-        dyk+=`${planetName} has ${planetMoons} moons and`;
+    if (planetName === "Moon") {
+        dyk+= 'The ';
+        orbitee = 'Earth';
+    } else {
+        orbitee = 'Sun';    
     }
 
-    dyk+= ` takes ${planetOrbit} days to orbit the sun!`
+    dyk+= `${planetName} `;
+
+    if (planetMoons === null) {
+        return; 
+    } else if (planetMoons === 0) {
+        dyk+= `has 0 moons,`;
+    } else if (planetMoons === 1) {
+        dyk+= `has 1 moon,`;
+    } else if (planetMoons > 1) {
+        dyk+= `has ${planetMoons} moons,`;
+    }
+
+    dyk+= ` takes ${planetOrbit} days to orbit the ${orbitee}`;
+
+    dyk+= ' and has an average temperature of ' + planetTemp + '\xB0C?';
+
     console.log(dyk);
     modalDYK.textContent = dyk;
 }
@@ -25,13 +41,26 @@ fetch(queryURL)
     .then (function (response) {
         return response.json();
     }).then(function (data) {
-        //console.log(data);
-        planetName = data.englishName;
-        //console.log(planetName);
-        planetMoons = data.moons.length;
-        //console.log(planetMoons);
-        planetOrbit = Math.floor(data.sideralOrbit);
-        //console.log(planetOrbit);
+        console.log(data);
+        if (data.englishName) {
+            planetName = data.englishName;
+            console.log(planetName);
+        }
+        
+        if (data.moons) {
+            planetMoons = data.moons.length;
+            console.log(planetMoons);
+        }
+        
+        if (data.sideralOrbit) {
+            planetOrbit = Math.floor(data.sideralOrbit);
+            console.log(planetOrbit);
+        }
+        if (data.avgTemp) {
+            planetTemp = parseInt(data.avgTemp) - 273.15;
+            planetTemp = Math.round((planetTemp + Number.EPSILON) * 100) / 100;
+            console.log(planetTemp);
+        }
         buildDYK();
  });
  

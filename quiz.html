@@ -5,21 +5,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AstroQuiz</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://fonts.cdnfonts.com/css/procyon?styles=164763" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/fauna?styles=159199" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/drius?styles=164403" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet" type="text/css">
-
 </head>
 
 <body id="quizpage">
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand d-flex align-items-center" href="#homepage">
-                <img src="images/astro.png" alt="astronaut" height="30" class="mr-2">
-                AstroQuiz
-            </a>
+            <div class="d-flex justify-content-between align-items-center w-100">
+                <a class="navbar-brand d-flex align-items-center" href="/">
+                    <img src="images/astro.png" alt="planet" height="40" class="mr-2">
+                    AstroQuiz
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
         </div>
     </nav>
+    <!-- Header -->
     <header class="container">
         <div class="row">
             <div class="col">
@@ -27,10 +36,12 @@
             </div>
         </div>
     </header>
+    <!-- Main / Quiz Area -->
     <main class="container-md quiz-tablet mt-5 p-4">
         <div class="row">
             <section class="col-xs-12 col-sm-10 order-sm-2">
-                <div id="question-image" class="image-container text-center"><!-- div for displaying NASA images -->
+                <div id="question-image" class="image-container text-center">
+                    <!-- div for displaying NASA images -->
                 </div>
                 <div id="question-box" class="question tablet-box mt-3 mb-3 p-4">
                     <!-- Question to be populated here -->
@@ -64,8 +75,7 @@
                     <p class="current-score">0</p>
                 </div>
                 <div class="text-center my-2">
-                    <button type="button" class="btn btn-primary btn-howtoplay" data-bs-toggle="modal"
-                        data-bs-target="#howModal">?</button>
+                    <button type="button" class="btn btn-primary btn-howtoplay" data-bs-toggle="modal" data-bs-target="#howModal">?</button>
                 </div>
                 <div id="progress-bar" class="text-center">
                     <h5>Distance in kilometers</h5>
@@ -91,15 +101,12 @@
                         <div class="dot-label" id="dot1">5.91B</div>
                     </ul>
                 </div>
-        </div>
-        <div>
-            <p>Buttons to remove</p>
-            <button id="btn-abort" class="btn btn-danger"><a href="index.html">Abort Mission</a></button>
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#correctModal">Correct
-                Modal</button>
-        </div>
+            <div>
+                <p>Buttons to remove</p>
+                <button id="btn-abort" class="btn btn-danger"><a href="index.html">Abort Mission</a></button>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#correctModal">Correct Modal</button>
+            </div>
         </aside>
-        </div>
     </main>
     <footer class="container mt-4">
         <div class="row">

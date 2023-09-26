@@ -7,16 +7,17 @@
   --homepagepurple: #b83bce;
   --errorred: #ea5656;
   --correctgreen: #55bd51;
-  --font: #efefef;
+  --dark: #090909;
+  --light: #efefef;
   --curvedcorner1: 20px;
   --curvedcorner2: 10px;
 }
 
 /*page styles*/
 body {
-  background-color: #090909;
+  background-color: var(--dark);
   background-attachment: fixed;
-  color: var(--font);
+  color: var(--light);
   font-size: 1.1rem;
 }
 
@@ -46,7 +47,7 @@ body#homepage::before {
 }
 
 body#quizpage,
-body#endpage {
+body#quizend {
   background-image: url("../images/star-bg.jpg");
 }
 
@@ -60,7 +61,6 @@ body#endpage {
   font-size: 30px;
   margin-left: 15px;
   color: var(--accent1);
-  /*need to choose a purple*/
   color: #d95fee;
   /* Adjusting the font size of the brand/logo */
   font-family: "Fauna", sans-serif;
@@ -79,8 +79,6 @@ body#endpage {
 }
 
 .nav-link:hover {
-  color: var(--accent1) !important;
-  /*need to choose a purple*/
   color: var(--homepagepurple) !important;
   background-color: rgb(251, 250, 250);
   transition: color 0.3s, background-color 0.3s;
