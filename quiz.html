@@ -49,13 +49,17 @@
                     <h5>Your Score So Far</h5>
                     <p class="current-score">100</p>
                 </div>
+                <div class="text-center my-2">
+                    <button type="button" class="btn btn-primary btn-howtoplay" data-bs-toggle="modal" data-bs-target="#howModal">?</button>
+                </div>
                 <div id="progress-bar" class="text-center">
                     Progress bar goes here
                 </div>
-                <!--these probably want different styling and positions but are here for functionality for now-->
-                <p>Buttons to remove</p>
-                <button id="btn-abort" class="btn btn-danger"><a href="index.html">Abort Mission</a></button>
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#correctModal">Correct Modal</button>
+                <div>
+                    <p>Buttons to remove</p>
+                    <button id="btn-abort" class="btn btn-danger"><a href="index.html">Abort Mission</a></button>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#correctModal">Correct Modal</button>
+                </div>
             </aside>
         </div>
     </main>
@@ -66,7 +70,7 @@
             </div>
         </div>
     </footer>
-    <!-- Modal -->
+    <!-- Modals -->
     <div class="modal fade quiz-modal" id="correctModal" tabindex="-1" aria-labelledby="correctModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -81,6 +85,22 @@
                 <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 <button id="next-question" type="button" class="btn btn-success">Next Question</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade quiz-modal" id="howModal" tabindex="-1" aria-labelledby="howModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h3 class="modal-title fs-5" id="howModalLabel">How to Play!</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Choose the correct answer from the options to power up your ship! But be careful! You will lose 25 points for each incorrect answer!</p>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>

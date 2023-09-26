@@ -281,10 +281,35 @@ body#endpage {
 
 /*buttons*/
 
+#btn-returnhome {
+    background-color: var(--accent1a);
+    border-color: var(--accent1a);
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+#btn-returnhome:hover {
+    opacity: 0.8;
+}
+
 #btn-startquiz {
     font-size: 2em !important;
     background-color: var(--homepagepurple) !important;
     border-color: var(--homepagepurple);
     margin-top: 3rem;
     margin-bottom: 1rem;
+}
+
+.btn-howtoplay {
+    border-radius: var(--curvedcorner1) !important;
+    background-color: var(--accent1a) !important;
+    border-color: var(--accent1a) !important;
+    color: #fff !important;
+    font-weight: bold;
+    padding: 3px 13px;
+    font-size: 1.2rem;
+}
+
+.btn-howtoplay:hover {
+    opacity: 0.8;
 }
