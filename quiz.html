@@ -10,7 +10,7 @@
     <link href="css/style.css" rel="stylesheet" type="text/css">
 </head>
 
-<body id="quizpage"> <!-- created an id to differentiate the quiz body from homepage -->
+<body id="quizpage">
     <header class="container">
         <div class="row">
             <div class="col">
@@ -18,7 +18,7 @@
             </div>
         </div>
     </header>
-    <main class="container-md px-4 quiz-tablet mt-5 p-4">
+    <main class="container-md quiz-tablet mt-5 p-4">
         <div class="row">
             <section class="col-xs-12 col-sm-10 order-sm-2">
                 <div id="question-image" class="image-container text-center"><!-- div for displaying NASA images --></div> 
@@ -26,25 +26,40 @@
                     <!-- Question to be populated here -->
                 </div>
                 <div class="answers">
-                    <div id="select-a" class="clickable answer tablet-box tablet-box-alt mt-3 mb-3 p-4">
+                    <div id="select-a" class="clickable answer tablet-box tablet-box-alt mt-3 mb-3 p-4" data-clicked="unclicked">
                         <!-- Answer A to be populated here -->
                     </div>
-                    <div id="select-b" class="clickable answer tablet-box tablet-box-alt mt-3 mb-3 p-4">
+                    <div id="select-b" class="clickable answer tablet-box tablet-box-alt mt-3 mb-3 p-4" data-clicked="unclicked">
                         <!-- Answer B to be populated here -->
                     </div>
-                    <div id="select-c" class="clickable answer tablet-box tablet-box-alt mt-3 mb-3 p-4">
+                    <div id="select-c" class="clickable answer tablet-box tablet-box-alt mt-3 mb-3 p-4" data-clicked="unclicked">
                         <!-- Answer C to be populated here --> 
                     </div>
-                    <div id="select-d" class="clickable answer tablet-box tablet-box-alt mt-3 mb-3 p-4">
+                    <div id="select-d" class="clickable answer tablet-box tablet-box-alt mt-3 mb-3 p-4" data-clicked="unclicked">
                         <!-- Answer D to be populated here -->
                     </div>
                 </div>
             </section>
             <aside class="col-xs-12 col-sm-2 order-sm-1">
+                <div class="side-widget text-center my-2 p-3">
+                    <h5>Points Available</h5>
+                    <p class="points-available">100</p>
+                </div>
+                <div class="side-widget text-center my-2 p-3">
+                    <h5>Your Score So Far</h5>
+                    <p class="current-score">100</p>
+                </div>
+                <div id="progress-bar" class="text-center">
+                    Progress bar goes here
+                </div>
                 <!--these probably want different styling and positions but are here for functionality for now-->
                 <button id="btn-more-info" class="btn btn-primary" disabled>Learn More</button>
                 <button id="btn-abort" class="btn btn-danger"><a href="index.html">Abort Mission</a></button>
-                <button id="next-question" class="btn btn-success">Next Question</button>
+                <button id="next-questions" class="btn btn-success">Next Question</button>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#correctModal">
+                    Correct
+                  </button>
+                  
             </aside>
         </div>
     </main>
@@ -55,8 +70,25 @@
             </div>
         </div>
     </footer>
-
+    <!-- Modal -->
+    <div class="modal fade quiz-modal" id="correctModal" tabindex="-1" aria-labelledby="correctModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h1 class="modal-title fs-5" id="correctModalLabel">Correct!</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    That's the correct answer!
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button id="next-question" type="button" class="btn btn-success">Next Question</button>
+                </div>
+            </div>
+        </div>
     </div>
+  
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
@@ -64,5 +96,4 @@
     <script src="js/questions.js"></script>
     <script src="js/script.js"></script>
 </body>
-
 </html>

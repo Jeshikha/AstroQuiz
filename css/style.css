@@ -6,7 +6,7 @@
     --accent2a: #316997;
     --homepagepurple: #B83BCE;
     --errorred: #ea5656;
-    --correctgreen: #8fc254;
+    --correctgreen: #55bd51;
     --font: #efefef;
     --curvedcorner1: 20px;
     --curvedcorner2: 10px;
@@ -186,6 +186,7 @@ body#endpage {
 
 .quiz-tablet {
     max-width: 1000px;
+    width: 94%;
     background-color: #aaa;
     border-radius: var(--curvedcorner1);
     box-shadow: 6px 8px 21px 0px rgba(0, 0, 0, 1);
@@ -235,9 +236,39 @@ body#endpage {
     transform: translateY(4px);
 }
 
+.select-incorrect {
+    background-color: var(--errorred);
+}
+
+.select-correct {
+    background-color: var(--correctgreen);
+}
+
+.quiz-modal,
+.quiz-modal h1,
+.quiz-modal p {
+    color: #090909;
+}
+
 /*end page*/
+.score {
+    background-color: var(--accent2);
+}
 
+/*side column*/
+.side-widget {
+    border-radius: var(--curvedcorner2);
+    background-color: #000;
+}
 
+.side-widget h5 {
+    font-weight: bold;
+}
+
+/*progress bar*/
+#progress-bar { /*remove this style - just to see where it is*/
+    background-color:#999;
+}
 
 /*buttons*/
 
