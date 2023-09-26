@@ -1,5 +1,4 @@
-//let queryURL = `https://api.le-systeme-solaire.net/rest/bodies/${solaireId}`;
-let queryURL = `https://api.le-systeme-solaire.net/rest/bodies/earth`;
+//let queryURL = `https://api.le-systeme-solaire.net/rest/bodies/earth`;
 let planetName;
 let planetMoons;
 let planetOrbit;
@@ -19,8 +18,8 @@ function buildDYK () {
 
     dyk+= `${planetName} `;
 
-    if (planetMoons === null) {
-        return; 
+    if (planetName === "Moon") {
+        //
     } else if (planetMoons === 0) {
         dyk+= `has 0 moons,`;
     } else if (planetMoons === 1) {
@@ -36,36 +35,6 @@ function buildDYK () {
     console.log(dyk);
     modalDYK.textContent = dyk;
 }
-
-fetch(queryURL)
-    .then (function (response) {
-        return response.json();
-    }).then(function (data) {
-        console.log(data);
-        if (data.englishName) {
-            planetName = data.englishName;
-            console.log(planetName);
-        }
-        
-        if (data.moons) {
-            planetMoons = data.moons.length;
-            console.log(planetMoons);
-        }
-        
-        if (data.sideralOrbit) {
-            planetOrbit = Math.floor(data.sideralOrbit);
-            console.log(planetOrbit);
-        }
-        if (data.avgTemp) {
-            planetTemp = parseInt(data.avgTemp) - 273.15;
-            planetTemp = Math.round((planetTemp + Number.EPSILON) * 100) / 100;
-            console.log(planetTemp);
-        }
-        buildDYK();
- });
- 
-// need to do some different things for the moon.......
-
 
 //terre
 //lune
