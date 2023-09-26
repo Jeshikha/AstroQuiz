@@ -36,5 +36,6 @@ saveButtonClick.addEventListener("click", function (event) {
 
   // Get the most recent submission
   let lastPlayer = JSON.parse(localStorage.getItem("player"));
-  scoreBox.textContent = lastPlayer.name;
+
+  scoreBox.textContent = `${player.name} ----- ${totalScore}`;
 });
