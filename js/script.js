@@ -3,7 +3,12 @@
 // ------------------------------- INITIALISE VARIABLES ---------------------------------------
 //
 // GENERAL VARIABLE SETUPS
+//
+//
+// ADD EVENT LISTENERS
 let optionClick = document.querySelector(".clickable");
+let pointsAvailableBox = document.querySelector(".points-available");
+let currentScoreBox = document.querySelector(".current-score");
 //
 //
 // QUESTION BUTTON SELECTOR VARIABLES
@@ -15,6 +20,11 @@ let answerBtn4 = document.querySelector("#select-d");
 let nextQuestion = document.getElementById("next-question");
 let abortMission = document.getElementById("btn-abort");
 let questionImageElement = document.getElementById("question-image"); // Added this line
+//
+//
+// GAME OVER PAGE EVENT LISTENERS
+let endgameToggle = document.querySelector(".endgame");
+let leaderBoardToggle = document.querySelector(".leaderboard");
 //
 //
 // GAME VARIABLE SETUP
@@ -55,13 +65,16 @@ function answerSelect() {
           // Reset button colours when question changes
           button.style.backgroundColor = "#a667e5";
         });
+        pointsAvailableBox.textContent = questionScore;
+        currentScoreBox.textContent = totalScore;
       } else {
         gameOver();
       }
     } else {
       checkAnswerClicked(this);
       console.log("Question Score: " + questionScore); // Testing purposes. Remove once code finished.
-      this.style.backgroundColor = "red";
+      this.style.backgroundColor = "#EA5656";
+      pointsAvailableBox.textContent = questionScore;
     }
   }
 }
@@ -84,14 +97,16 @@ function injectQuestions(n) {
   console.log("question no. = " + questionNumber); // Testing purposes. Remove once code finished.
   updateDotColors(n);
 }
+
 injectQuestions(questionNumber);
+
 //
 //
 //
 // WRONG ANSWER PENALTY FUNCTION
 //
 function checkAnswerClicked(button1) {
-  if (button1.style.backgroundColor != "red") {
+  if (button1.style.backgroundColor != "#EA5656") {
     questionScore -= 25;
   }
   return;
@@ -120,15 +135,18 @@ function fetchAndDisplayImageForNASAId(nasaId, index) {
     .then(function (data) {
       if (data.collection.items.length > 0) {
         const imgURL = data.collection.items[0].href;
-        const imgEl = document.createElement('img');
-        imgEl.setAttribute('src', imgURL);
-        imgEl.setAttribute('alt', `NASA Image`);
-        questionImageElement.innerHTML = ''; // Clear previous images
+        const imgEl = document.createElement("img");
+        imgEl.setAttribute("src", imgURL);
+        imgEl.setAttribute("alt", `NASA Image`);
+        questionImageElement.innerHTML = ""; // Clear previous images
         questionImageElement.appendChild(imgEl);
       }
     })
     .catch(function (error) {
-      console.error(`Error fetching image data for NASA ID ${nasaId} from NASA API:`, error);
+      console.error(
+        `Error fetching image data for NASA ID ${nasaId} from NASA API:`,
+        error
+      );
     });
 }
 
@@ -146,3 +164,5 @@ function updateDotColors(currentQuestionNumber) {
     }
   });
 }
+//
+//
