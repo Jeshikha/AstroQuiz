@@ -367,3 +367,42 @@ footer p {
     text-align: center;
     font-size: 18px;
 }
+
+.dot-label {
+    width: 60px;
+    height: 30px;
+    background-color: #d257ff;
+    color: white;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    margin-top: auto;
+    font-size: 20px;
+
+}
+
+/* CSS for dot lines */
+.dot-line {
+    flex-grow: 1;
+    width: 60px;
+    height: 30px;
+    background-color: transparent;
+    color: white;
+    text-align: center;
+    line-height: 20px;
+    border-radius: 50%;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.answered-dot {
+    background-color: green;
+    /* Change to your desired color */
+    color: white;
+    /* Add any other styles for answered dots */
+}
+
+h5 {
+    text-align: center;
+}

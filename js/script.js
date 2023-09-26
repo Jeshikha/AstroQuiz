@@ -82,6 +82,7 @@ function injectQuestions(n) {
   // Fetch and display the image for the current question
   fetchAndDisplayImageForNASAId(questions[n].nasaId, n);
   console.log("question no. = " + questionNumber); // Testing purposes. Remove once code finished.
+  updateDotColors(n);
 }
 injectQuestions(questionNumber);
 //
@@ -129,4 +130,19 @@ function fetchAndDisplayImageForNASAId(nasaId, index) {
     .catch(function (error) {
       console.error(`Error fetching image data for NASA ID ${nasaId} from NASA API:`, error);
     });
+}
+
+// Function to update dot colors based on the current question number
+function updateDotColors(currentQuestionNumber) {
+  const dotElements = document.querySelectorAll(".dot-label");
+
+  dotElements.forEach((dot, index) => {
+    if (index < currentQuestionNumber) {
+      // Question is answered, change dot color to green
+      dot.classList.add("answered-dot");
+    } else {
+      // Question is not yet answered, change dot color to purple
+      dot.classList.remove("answered-dot");
+    }
+  });
 }
