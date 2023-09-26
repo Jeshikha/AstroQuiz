@@ -73,7 +73,7 @@ function answerSelect() {
     } else {
       checkAnswerClicked(this);
       console.log("Question Score: " + questionScore); // Testing purposes. Remove once code finished.
-      this.style.backgroundColor = "red";
+      this.style.backgroundColor = "#EA5656";
       pointsAvailableBox.textContent = questionScore;
     }
   }
@@ -106,7 +106,7 @@ injectQuestions(questionNumber);
 // WRONG ANSWER PENALTY FUNCTION
 //
 function checkAnswerClicked(button1) {
-  if (button1.style.backgroundColor != "red") {
+  if (button1.style.backgroundColor != "#EA5656") {
     questionScore -= 25;
   }
   return;
