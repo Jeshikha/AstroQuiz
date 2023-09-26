@@ -3,7 +3,10 @@
 // ------------------------------- INITIALISE VARIABLES ---------------------------------------
 //
 // GENERAL VARIABLE SETUPS
+// ADD EVENT LISTENERS
 let optionClick = document.querySelector(".clickable");
+let pointsAvailableBox = document.querySelector(".points-available");
+let currentScoreBox = document.querySelector(".current-score");
 //
 //
 // QUESTION BUTTON SELECTOR VARIABLES
@@ -27,7 +30,7 @@ let questionScore = 100;
 // ----------------------------- FUNCTION DECLARATIONS ----------------------------------------
 
 //
-//
+pointsAvailableBox.textContent = questionScore;
 // MAIN USER LOGIC
 //
 function answerSelect() {
@@ -55,6 +58,8 @@ function answerSelect() {
           // Reset button colours when question changes
           button.style.backgroundColor = "#a667e5";
         });
+        pointsAvailableBox.textContent = questionScore;
+        currentScoreBox.textContent = totalScore;
       } else {
         gameOver();
       }
@@ -62,6 +67,7 @@ function answerSelect() {
       checkAnswerClicked(this);
       console.log("Question Score: " + questionScore); // Testing purposes. Remove once code finished.
       this.style.backgroundColor = "red";
+      pointsAvailableBox.textContent = questionScore;
     }
   }
 }
@@ -120,15 +126,18 @@ function fetchAndDisplayImageForNASAId(nasaId, index) {
     .then(function (data) {
       if (data.collection.items.length > 0) {
         const imgURL = data.collection.items[0].href;
-        const imgEl = document.createElement('img');
-        imgEl.setAttribute('src', imgURL);
-        imgEl.setAttribute('alt', `NASA Image`);
-        questionImageElement.innerHTML = ''; // Clear previous images
+        const imgEl = document.createElement("img");
+        imgEl.setAttribute("src", imgURL);
+        imgEl.setAttribute("alt", `NASA Image`);
+        questionImageElement.innerHTML = ""; // Clear previous images
         questionImageElement.appendChild(imgEl);
       }
     })
     .catch(function (error) {
-      console.error(`Error fetching image data for NASA ID ${nasaId} from NASA API:`, error);
+      console.error(
+        `Error fetching image data for NASA ID ${nasaId} from NASA API:`,
+        error
+      );
     });
 }
 
