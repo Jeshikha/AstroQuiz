@@ -245,9 +245,18 @@ body#endpage {
 }
 
 .quiz-modal,
-.quiz-modal h1,
+.quiz-modal h3, .quiz-modal h4,
 .quiz-modal p {
     color: #090909;
+}
+
+.quiz-modal h3 {
+    font-weight: bold;
+}
+
+.quiz-modal h4 {
+    font-size: 1.2rem;
+    text-decoration: underline;
 }
 
 /*end page*/
