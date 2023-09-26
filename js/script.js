@@ -3,6 +3,8 @@
 // ------------------------------- INITIALISE VARIABLES ---------------------------------------
 //
 // GENERAL VARIABLE SETUPS
+//
+//
 // ADD EVENT LISTENERS
 let optionClick = document.querySelector(".clickable");
 let pointsAvailableBox = document.querySelector(".points-available");
@@ -20,6 +22,11 @@ let abortMission = document.getElementById("btn-abort");
 let questionImageElement = document.getElementById("question-image"); // Added this line
 //
 //
+// GAME OVER PAGE EVENT LISTENERS
+let endgameToggle = document.querySelector(".endgame");
+let leaderBoardToggle = document.querySelector(".leaderboard");
+//
+//
 // GAME VARIABLE SETUP
 let questionNumber = 0;
 let totalScore = 0;
@@ -30,7 +37,7 @@ let questionScore = 100;
 // ----------------------------- FUNCTION DECLARATIONS ----------------------------------------
 
 //
-pointsAvailableBox.textContent = questionScore;
+//
 // MAIN USER LOGIC
 //
 function answerSelect() {
@@ -90,7 +97,9 @@ function injectQuestions(n) {
   console.log("question no. = " + questionNumber); // Testing purposes. Remove once code finished.
   updateDotColors(n);
 }
+
 injectQuestions(questionNumber);
+
 //
 //
 //
@@ -155,3 +164,5 @@ function updateDotColors(currentQuestionNumber) {
     }
   });
 }
+//
+//

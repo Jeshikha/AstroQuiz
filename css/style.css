@@ -1,408 +1,405 @@
 /*variables*/
 :root {
-    --accent1: #a667e5;
-    --accent1a: #52277c;
-    --accent2: #5597cc;
-    --accent2a: #316997;
-    --homepagepurple: #B83BCE;
-    --errorred: #ea5656;
-    --correctgreen: #55bd51;
-    --font: #efefef;
-    --curvedcorner1: 20px;
-    --curvedcorner2: 10px;
+  --accent1: #a667e5;
+  --accent1a: #52277c;
+  --accent2: #5597cc;
+  --accent2a: #316997;
+  --homepagepurple: #b83bce;
+  --errorred: #ea5656;
+  --correctgreen: #55bd51;
+  --font: #efefef;
+  --curvedcorner1: 20px;
+  --curvedcorner2: 10px;
 }
 
 /*page styles*/
 body {
-    background-color: #090909;
-    background-attachment: fixed;
-    color: var(--font);
-    font-size: 1.1rem;
+  background-color: #090909;
+  background-attachment: fixed;
+  color: var(--font);
+  font-size: 1.1rem;
 }
 
 body#homepage {
-    margin: 0;
-    padding: 0;
-    position: relative;
-    /* Needed for pseudo-element */
+  margin: 0;
+  padding: 0;
+  position: relative;
+  /* Needed for pseudo-element */
 }
 
 body#homepage::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.906) 0%, rgba(0, 0, 0, 0) 100%);
-    background-size: cover;
-    background-repeat: no-repeat;
-    z-index: -1;
-    /* Ensure the overlay is behind the content */
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.906) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: -1;
+  /* Ensure the overlay is behind the content */
 }
 
 body#quizpage,
 body#endpage {
-    background-image: url("../images/star-bg.jpg");
+  background-image: url("../images/star-bg.jpg");
 }
 
 /* navigation bar */
 .navbar {
-    margin-bottom: 0;
-    border-bottom: none;
+  margin-bottom: 0;
+  border-bottom: none;
 }
 
 .navbar-brand {
-    font-size: 30px;
-    margin-left: 15px;
-    color: var(--accent1);
-    /*need to choose a purple*/
-    color: #d95fee;
-    /* Adjusting the font size of the brand/logo */
-    font-family: 'Fauna', sans-serif;
-
+  font-size: 30px;
+  margin-left: 15px;
+  color: var(--accent1);
+  /*need to choose a purple*/
+  color: #d95fee;
+  /* Adjusting the font size of the brand/logo */
+  font-family: "Fauna", sans-serif;
 }
 
 .navbar-toggler-icon {
-    color: #ffffff5a !important;
-
+  color: #ffffff5a !important;
 }
 
 .nav-link {
-    color: #fffffff1 !important;
-    margin-right: 40px;
-    background-color: var(--homepagepurple);
-    font-weight: bold;
-    border-radius: 10% !important;
-
+  color: #fffffff1 !important;
+  margin-right: 40px;
+  background-color: var(--homepagepurple);
+  font-weight: bold;
+  border-radius: 10% !important;
 }
 
 .nav-link:hover {
-    color: var(--accent1) !important;
-    /*need to choose a purple*/
-    color: var(--homepagepurple) !important;
-    background-color: rgb(251, 250, 250);
-    transition: color 0.3s, background-color 0.3s;
+  color: var(--accent1) !important;
+  /*need to choose a purple*/
+  color: var(--homepagepurple) !important;
+  background-color: rgb(251, 250, 250);
+  transition: color 0.3s, background-color 0.3s;
 }
 
 .navbar-dark.bg-dark {
-    background-color: #00000032 !important;
-    /* Background color of the navbar */
+  background-color: #00000032 !important;
+  /* Background color of the navbar */
 }
 
 .navbar-nav {
-    padding-left: 30rem !important;
+  padding-left: 30rem !important;
 }
 
 .navbar-brand img {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 
 .dropdown-menu-right .dropdown-item:hover {
-    background-color: var(--homepagepurple) !important;
-    color: white !important;
+  background-color: var(--homepagepurple) !important;
+  color: white !important;
 }
 
 /* Home page */
 
 #homepage h1 {
-    font-size: 4rem;
-    color: #d95fee;
-    margin-bottom: 0;
-    display: inline-block;
-    font-family: 'Procyon Shadow', sans-serif;
-
+  font-size: 4rem;
+  color: #d95fee;
+  margin-bottom: 0;
+  display: inline-block;
+  font-family: "Procyon Shadow", sans-serif;
 }
 
 .intro-text p {
-    color: white;
-    justify-content: center;
-    font-size: 1.5rem;
-    margin-top: 0;
-    font-family: 'Fauna', sans-serif;
+  color: white;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-top: 0;
+  font-family: "Fauna", sans-serif;
 }
 
-
 .star-wars p {
-    background-color: rgba(0, 0, 0, 0.427);
-    color: white;
-    justify-content: center;
-    font-size: 1.5rem;
-    margin-top: 0;
+  background-color: rgba(0, 0, 0, 0.427);
+  color: white;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-top: 0;
 }
 
 /* Star Wars-style opening crawl container */
 .star-wars {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 50vh;
-    /* Adjusting the height as needed */
-    overflow: hidden;
-    color: #feda4a;
-    font-family: 'Pathway Gothic One', sans-serif;
-    font-size: 100%;
-    font-weight: 700;
-    letter-spacing: 4px;
-    line-height: 150%;
-    perspective: 400px;
-    text-align: justify;
-    position: relative;
-    padding: 20px;
-    /* Adjusting the padding as needed */
-
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  /* Adjusting the height as needed */
+  overflow: hidden;
+  color: #feda4a;
+  font-family: "Pathway Gothic One", sans-serif;
+  font-size: 100%;
+  font-weight: 700;
+  letter-spacing: 4px;
+  line-height: 150%;
+  perspective: 400px;
+  text-align: justify;
+  position: relative;
+  padding: 20px;
+  /* Adjusting the padding as needed */
 }
 
 /* Adjusting the crawl positioning */
 .crawl {
-    transform-origin: 50% 50%;
-    animation: crawl 160s linear infinite;
-    /* Slower crawl animation */
-    position: relative;
-    top: 50%;
-    text-align: center;
-    transform: translateY(-50%);
-    line-height: 3;
-    /* Adjusting line height as needed */
-    height: 30vh;
-    /* Adjusting the height as desired */
+  transform-origin: 50% 50%;
+  animation: crawl 160s linear infinite;
+  /* Slower crawl animation */
+  position: relative;
+  top: 50%;
+  text-align: center;
+  transform: translateY(-50%);
+  line-height: 3;
+  /* Adjusting line height as needed */
+  height: 30vh;
+  /* Adjusting the height as desired */
 }
 
-.crawl>.title {
-    font-size: 90%;
-    text-align: center;
+.crawl > .title {
+  font-size: 90%;
+  text-align: center;
 }
-
-
 
 @keyframes crawl {
-    0% {
-        top: 0;
-        transform: rotateX(20deg) translateZ(0);
-        opacity: 0;
-    }
+  0% {
+    top: 0;
+    transform: rotateX(20deg) translateZ(0);
+    opacity: 0;
+  }
 
-    1% {
-        opacity: 1;
-    }
+  1% {
+    opacity: 1;
+  }
 
-    99% {
-        opacity: 1;
-    }
+  99% {
+    opacity: 1;
+  }
 
-    100% {
-        top: -6000px;
-        transform: rotateX(25deg) translateZ(-2500px);
-        opacity: 0;
-    }
+  100% {
+    top: -6000px;
+    transform: rotateX(25deg) translateZ(-2500px);
+    opacity: 0;
+  }
 }
-
 
 /* Styling the crawl text within the container */
 .crawl p {
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    color: #feda4a;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  color: #feda4a;
 }
-
 
 /*quiz page*/
 
 .quiz-tablet {
-    max-width: 1000px;
-    width: 94%;
-    background-color: #aaa;
-    border-radius: var(--curvedcorner1);
-    box-shadow: 6px 8px 21px 0px rgba(0, 0, 0, 1);
+  max-width: 1000px;
+  width: 94%;
+  background-color: #aaa;
+  border-radius: var(--curvedcorner1);
+  box-shadow: 6px 8px 21px 0px rgba(0, 0, 0, 1);
 }
 
 .tablet-box {
-    border-radius: var(--curvedcorner1);
-    box-shadow: 3px 4px 21px -10px rgba(0, 0, 0, 0.5);
-    background-color: var(--accent2);
-    border: 1px solid var(--accent2a);
+  border-radius: var(--curvedcorner1);
+  box-shadow: 3px 4px 21px -10px rgba(0, 0, 0, 0.5);
+  background-color: var(--accent2);
+  border: 1px solid var(--accent2a);
 }
 
 .tablet-box-alt {
-    background-color: var(--accent1);
-    border: 1px solid var(--accent1a);
+  background-color: var(--accent1);
+  border: 1px solid var(--accent1a);
 }
 
 .question,
 .answer {
-    font-size: 1.4rem;
+  font-size: 1.4rem;
 }
 
 .image-container img {
-    border-radius: var(--curvedcorner1);
-    max-height: 550px;
-    max-width: 100%;
-    border: 5px solid var(--accent2a);
+  border-radius: var(--curvedcorner1);
+  max-height: 550px;
+  max-width: 100%;
+  border: 5px solid var(--accent2a);
 }
 
 .question {
-    border-width: 3px;
+  border-width: 3px;
 }
 
 .answer {
-    cursor: pointer;
-    border: none;
-    box-shadow: 0 8px var(--accent1a);
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 8px var(--accent1a);
 }
 
 .answer:hover,
 .answer:focus {
-    opacity: 0.90;
+  opacity: 0.9;
 }
 
 .answer:active {
-    box-shadow: 0 4px var(--accent1a);
-    transform: translateY(4px);
+  box-shadow: 0 4px var(--accent1a);
+  transform: translateY(4px);
 }
 
 .select-incorrect {
-    background-color: var(--errorred);
+  background-color: var(--errorred);
 }
 
 .select-correct {
-    background-color: var(--correctgreen);
+  background-color: var(--correctgreen);
 }
 
 .quiz-modal,
 .quiz-modal h3,
 .quiz-modal h4,
 .quiz-modal p {
-    color: #090909;
+  color: #090909;
 }
 
 .quiz-modal h3 {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .quiz-modal h4 {
-    font-size: 1.2rem;
-    text-decoration: underline;
+  font-size: 1.2rem;
+  text-decoration: underline;
 }
 
 /*end page*/
 .score {
-    background-color: var(--accent2);
+  background-color: var(--accent2);
 }
 
 /*side column*/
 .side-widget {
-    border-radius: var(--curvedcorner2);
-    background-color: #000;
+  border-radius: var(--curvedcorner2);
+  background-color: #000;
 }
 
 .side-widget h5 {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 /*progress bar*/
 #progress-bar {
-    /*remove this style - just to see where it is*/
-    background-color: #999;
+  /*remove this style - just to see where it is*/
+  background-color: #999;
 }
 
 /*buttons*/
 
 #btn-returnhome {
-    background-color: var(--accent1a);
-    border-color: var(--accent1a);
-    font-size: 1.6rem;
-    font-weight: bold;
+  background-color: var(--accent1a);
+  border-color: var(--accent1a);
+  font-size: 1.6rem;
+  font-weight: bold;
 }
 
 #btn-returnhome:hover {
-    opacity: 0.8;
+  opacity: 0.8;
 }
 
 #btn-startquiz {
-    font-size: 1.5em !important;
-    background-color: #d85fee97 !important;
-    border-color: var(--homepagepurple);
-    margin-top: 1rem;
-    margin-bottom: 2rem;
-    position: relative;
-    overflow: visible;
-    font-family: 'Drius Halftone', sans-serif;
+  font-size: 1.5em !important;
+  background-color: #d85fee97 !important;
+  border-color: var(--homepagepurple);
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  position: relative;
+  overflow: visible;
+  font-family: "Drius Halftone", sans-serif;
 }
 
 /* Adding styles for the hover effect */
 #btn-startquiz:hover {
-    background-color: #55bd51 !important;
-    transform: scale(1.05);
-    color: black;
-    border-color: #55bd51;
+  background-color: #55bd51 !important;
+  transform: scale(1.05);
+  color: black;
+  border-color: #55bd51;
 }
 
-
-
 .btn-howtoplay {
-    border-radius: var(--curvedcorner1) !important;
-    background-color: var(--accent1a) !important;
-    border-color: var(--accent1a) !important;
-    color: #fff !important;
-    font-weight: bold;
-    padding: 3px 13px;
-    font-size: 1.2rem;
+  border-radius: var(--curvedcorner1) !important;
+  background-color: var(--accent1a) !important;
+  border-color: var(--accent1a) !important;
+  color: #fff !important;
+  font-weight: bold;
+  padding: 3px 13px;
+  font-size: 1.2rem;
 }
 
 .btn-howtoplay:hover {
-    opacity: 0.8;
+  opacity: 0.8;
 }
 
 /* Footer styling */
 footer {
-    background-color: rgba(0, 0, 0, 0.711);
-    color: #f4c9fc;
-    padding: 10px 0;
+  background-color: rgba(0, 0, 0, 0.711);
+  color: #f4c9fc;
+  padding: 10px 0;
 }
 
 /* Style the copyright notice */
 footer p {
-    text-align: center;
-    font-size: 18px;
+  text-align: center;
+  font-size: 18px;
 }
 
 .dot-label {
-    width: 60px;
-    height: 30px;
-    background-color: #d257ff;
-    color: white;
-    text-align: center;
-    line-height: 30px;
-    border-radius: 50%;
-    margin-bottom: 10px;
-    margin-top: auto;
-    font-size: 20px;
-
+  width: 60px;
+  height: 30px;
+  background-color: #d257ff;
+  color: white;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  margin-top: auto;
+  font-size: 20px;
 }
 
 /* CSS for dot lines */
 .dot-line {
-    flex-grow: 1;
-    width: 60px;
-    height: 30px;
-    background-color: transparent;
-    color: white;
-    text-align: center;
-    line-height: 20px;
-    border-radius: 50%;
-    font-weight: bold;
-    margin-bottom: 10px;
+  flex-grow: 1;
+  width: 60px;
+  height: 30px;
+  background-color: transparent;
+  color: white;
+  text-align: center;
+  line-height: 20px;
+  border-radius: 50%;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
 .answered-dot {
-    background-color: green;
-    /* Change to your desired color */
-    color: white;
-    /* Add any other styles for answered dots */
+  background-color: green;
+  /* Change to your desired color */
+  color: white;
+  /* Add any other styles for answered dots */
 }
 
 h5 {
-    text-align: center;
+  text-align: center;
+}
+
+/* CSS property to toggle game over displays*/
+
+.hidden {
+  display: none;
 }
