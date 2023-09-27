@@ -56,6 +56,8 @@ function answerSelect() {
 
     if (questions[questionNumber].answer === firstLetter) {
       totalScore += questionScore;
+      // Show the correct modal for correct answers
+      displayCorrectModal();
       console.log("totalScore: " + totalScore); // Testing purposes. Remove once code finished.
       if (questionNumber < questions.length - 1) {
         questionNumber++;
@@ -78,6 +80,13 @@ function answerSelect() {
     }
   }
 }
+
+// Adding this function to display the correct modal
+function displayCorrectModal() {
+  const correctModal = new bootstrap.Modal(document.getElementById('correctModal'));
+  correctModal.show();
+}
+
 answerSelect();
 //
 
@@ -96,7 +105,7 @@ function injectQuestions(n) {
 
   // Fetch and display the image for the current question
   fetchAndDisplayImageForNASAId(questions[n].nasaId, n);
-  
+
   // Fetch modal info
   fetchSolarStats(questions[n].solaireId);
 
@@ -157,41 +166,41 @@ function fetchAndDisplayImageForNASAId(nasaId, index) {
 }
 
 // solar system api fetch function
-function fetchSolarStats (solaireId) {
+function fetchSolarStats(solaireId) {
   let queryURL = `https://api.le-systeme-solaire.net/rest/bodies/${solaireId}`;
   fetch(queryURL)
-      .then (function (response) {
-          return response.json();
-      }).then(function (data) {
-          console.log(data);
-          if (data.englishName) {
-              planetName = data.englishName;
-              console.log(planetName);
-          }
-          
-          if (data.moons) {
-              planetMoons = data.moons.length;
-              console.log(planetMoons);
-          }
-          
-          if (data.sideralOrbit) {
-              planetOrbit = Math.floor(data.sideralOrbit);
-              console.log(planetOrbit);
-          }
-          if (data.avgTemp) {
-              planetTemp = parseInt(data.avgTemp) - 273.15;
-              planetTemp = Math.round((planetTemp + Number.EPSILON) * 100) / 100;
-              console.log(planetTemp);
-          }
-          buildDYK();
-  })
-  .catch(function (error) {
+    .then(function (response) {
+      return response.json();
+    }).then(function (data) {
+      console.log(data);
+      if (data.englishName) {
+        planetName = data.englishName;
+        console.log(planetName);
+      }
+
+      if (data.moons) {
+        planetMoons = data.moons.length;
+        console.log(planetMoons);
+      }
+
+      if (data.sideralOrbit) {
+        planetOrbit = Math.floor(data.sideralOrbit);
+        console.log(planetOrbit);
+      }
+      if (data.avgTemp) {
+        planetTemp = parseInt(data.avgTemp) - 273.15;
+        planetTemp = Math.round((planetTemp + Number.EPSILON) * 100) / 100;
+        console.log(planetTemp);
+      }
+      buildDYK();
+    })
+    .catch(function (error) {
       console.error(
         `Error fetching data for solar system statistics:`,
         error
       );
     });
-} 
+}
 
 // Function to update dot colors based on the current question number
 function updateDotColors(currentQuestionNumber) {

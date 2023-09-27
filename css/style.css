@@ -35,11 +35,9 @@ body#homepage::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.906) 0%,
-    rgba(0, 0, 0, 0) 100%
-  );
+  background: linear-gradient(to bottom,
+      rgba(0, 0, 0, 0.906) 0%,
+      rgba(0, 0, 0, 0) 100%);
   background-size: cover;
   background-repeat: no-repeat;
   z-index: -1;
@@ -165,7 +163,7 @@ body#quizend {
   /* Adjusting the height as desired */
 }
 
-.crawl > .title {
+.crawl>.title {
   font-size: 90%;
   text-align: center;
 }
@@ -280,13 +278,13 @@ body#quizend {
 
 .next-q-link {
   text-align: right;
-  font-size: 0.9em; 
+  font-size: 0.9em;
 }
 
 .next-q-link a {
-	color: #555;
-	font-style: italic;
-	margin-right: 2px;
+  color: #555;
+  font-style: italic;
+  margin-right: 2px;
 }
 
 /*end page*/
@@ -303,6 +301,7 @@ body#quizend {
 aside {
   position: relative;
 }
+
 .side-widget {
   border-radius: var(--curvedcorner2);
   background-color: #000;
@@ -378,7 +377,7 @@ aside {
 .btn {
   font-weight: bold;
   text-transform: uppercase;
-  font-style:italic;
+  font-style: italic;
 }
 
 #btn-returnhome {
@@ -478,4 +477,9 @@ footer p {
   position: absolute;
   bottom: 10px;
   left: 10px;
+}
+
+/* styling for modal */
+#modalb1 {
+  background-color: #55bd51;
 }
