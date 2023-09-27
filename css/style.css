@@ -7,16 +7,17 @@
   --homepagepurple: #b83bce;
   --errorred: #ea5656;
   --correctgreen: #55bd51;
-  --font: #efefef;
+  --dark: #090909;
+  --light: #efefef;
   --curvedcorner1: 20px;
   --curvedcorner2: 10px;
 }
 
 /*page styles*/
 body {
-  background-color: #090909;
+  background-color: var(--dark);
   background-attachment: fixed;
-  color: var(--font);
+  color: var(--light);
   font-size: 1.1rem;
 }
 
@@ -46,7 +47,7 @@ body#homepage::before {
 }
 
 body#quizpage,
-body#endpage {
+body#quizend {
   background-image: url("../images/star-bg.jpg");
 }
 
@@ -60,7 +61,6 @@ body#endpage {
   font-size: 30px;
   margin-left: 15px;
   color: var(--accent1);
-  /*need to choose a purple*/
   color: #d95fee;
   /* Adjusting the font size of the brand/logo */
   font-family: "Fauna", sans-serif;
@@ -79,8 +79,6 @@ body#endpage {
 }
 
 .nav-link:hover {
-  color: var(--accent1) !important;
-  /*need to choose a purple*/
   color: var(--homepagepurple) !important;
   background-color: rgb(251, 250, 250);
   transition: color 0.3s, background-color 0.3s;
@@ -280,12 +278,31 @@ body#endpage {
   text-decoration: underline;
 }
 
+.next-q-link {
+  text-align: right;
+  font-size: 0.9em; 
+}
+
+.next-q-link a {
+	color: #555;
+	font-style: italic;
+	margin-right: 2px;
+}
+
 /*end page*/
+.page-header h1 {
+  font-family: "Drius Halftone", sans-serif;
+  text-transform: uppercase;
+}
+
 .score {
   background-color: var(--accent2);
 }
 
 /*side column*/
+aside {
+  position: relative;
+}
 .side-widget {
   border-radius: var(--curvedcorner2);
   background-color: #000;
@@ -297,21 +314,110 @@ body#endpage {
 
 /*progress bar*/
 #progress-bar {
-  /*remove this style - just to see where it is*/
-  background-color: #999;
+  background-color: #777;
+  border-radius: var(--curvedcorner1);
+  padding: 10px 4px;
+}
+
+#progress-bar h4 {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+#progress-bar p {
+  font-size: 0.8rem;
+}
+
+#progress-bar ul {
+  padding: 0;
+}
+
+.dot-label {
+  width: 60px;
+  height: 30px;
+  background-color: #d257ff;
+  color: white;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  margin-top: auto;
+  margin: 13px auto;
+  font-size: 20px;
+}
+
+/* CSS for dot lines */
+
+.dot-line {
+  flex-grow: 1;
+  width: 60px;
+  height: 30px;
+  background-color: transparent;
+  color: white;
+  text-align: center;
+  line-height: 20px;
+  border-radius: 50%;
+  font-weight: bold;
+  margin: 10px auto;
+  display: none;
+}
+
+.answered-dot {
+  background-color: green;
+  /* Change to your desired color */
+  color: white;
+  /* Add any other styles for answered dots */
+}
+
+#progress-bar h5 {
+  text-align: center;
 }
 
 /*buttons*/
+
+.btn {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-style:italic;
+}
 
 #btn-returnhome {
   background-color: var(--accent1a);
   border-color: var(--accent1a);
   font-size: 1.6rem;
-  font-weight: bold;
 }
 
 #btn-returnhome:hover {
   opacity: 0.8;
+}
+
+#btn-abort {
+  display: block;
+  position: absolute;
+  bottom: 0px;
+  width: 136px;
+  height: 136px;
+  border-radius: 72px;
+  border: 8px solid #9b1217;
+  background-color: #ec1c24;
+  transition: all 0.1s ease-in-out;
+}
+
+#btn-abort a {
+  text-decoration: none;
+  color: #fff;
+  font-style: normal;
+  font-size: 1.2em;
+  line-height: 0.7em;
+}
+
+#btn-abort:hover {
+  transform: scale(1.1);
+  transition: all 0.1s ease-in-out;
+}
+
+#btn-abort:hover a {
+  text-shadow: 1px 1px 12px rgba(255, 243, 202, 1);
 }
 
 #btn-startquiz {
@@ -360,46 +466,16 @@ footer p {
   font-size: 18px;
 }
 
-.dot-label {
-  width: 60px;
-  height: 30px;
-  background-color: #d257ff;
-  color: white;
-  text-align: center;
-  line-height: 30px;
-  border-radius: 50%;
-  margin-bottom: 10px;
-  margin-top: auto;
-  font-size: 20px;
-}
-
-/* CSS for dot lines */
-.dot-line {
-  flex-grow: 1;
-  width: 60px;
-  height: 30px;
-  background-color: transparent;
-  color: white;
-  text-align: center;
-  line-height: 20px;
-  border-radius: 50%;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.answered-dot {
-  background-color: green;
-  /* Change to your desired color */
-  color: white;
-  /* Add any other styles for answered dots */
-}
-
-h5 {
-  text-align: center;
-}
-
 /* CSS property to toggle game over displays*/
 
 .hidden {
   display: none;
+}
+
+
+/*temp*/
+.delete-this {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
 }

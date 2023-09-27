@@ -43,7 +43,7 @@ let questions = [
       "Mars:\nWhich spacecraft successfully landed on Mars in 2021 and began exploring the planet's surface?",
     nasaId: "PIA25658",
     solaireId: "mars",
-    choices: ["A) Voyager 1", "B) Curiosity", "C) Hubble", "D) Rosetta"],
+    choices: ["A) Voyager 1", "B) Perseverance", "C) Curiosity", "D) Rosetta"],
     answer: "B",
     userAnswer: null,
   },
