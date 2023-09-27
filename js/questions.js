@@ -13,10 +13,10 @@ let questions = [
     userAnswer: null,
   },
   {
-    title: "Moon:\nWhat is the average temperature on the Moon's surface?",
+    title: "Moon:\nWhich of the following features is commonly found on the surface of the moon??",
     nasaId: "PIA00225",
     solaireId: "lune",
-    choices: ["A) -50°C", "B) 20°C", "C) 100°C", "D) -100°C"],
+    choices: ["A) Oceans", "B) Deserts", "C) Rainforests", "D) Mountains"],
     answer: "D",
     userAnswer: null,
   },
