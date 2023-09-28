@@ -118,8 +118,9 @@ function injectQuestions(n) {
   updateDotColors(n);
 }
 
-injectQuestions(questionNumber);
-
+if (quizQuestion) {
+  injectQuestions(questionNumber);
+}
 //
 //
 //
