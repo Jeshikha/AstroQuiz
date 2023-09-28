@@ -49,6 +49,16 @@ The team followed agile development methodologies, using GitHub Issues and Proje
 #### Educational and Fun: 
 AstroQuiz strikes a balance between educational content and entertainment, making learning about our universe enjoyable.
 
+#### Browser:
+Google Chrome 
+
+### User Story
+Meet Sarah, a devoted astronomy enthusiast and Star Wars fan. She discovered AstroQuiz, a web app that merges her love for space and Star Wars into an engaging cosmic adventure.
+Sarah joins AstroQuiz, where the Star Wars-style intro immerses her in an interstellar mission. Excited, she clicks "Start Mission."
+The quiz unfolds, quizzing her on space, planets, and more. Correct answers increase her score and move her further from Earth on a unique progress bar, giving her a sense of cosmic exploration.
+With captivating NASA images, she feels like a cosmic explorer, combining education and entertainment.
+As Sarah competes with the top score, AstroQuiz offers her an out-of-this-world experience that satisfies her cosmic curiosity and love for Star Wars.
+
 ### How to play AstroQuiz
 #### Getting Started:
 Upon landing on the AstroQuiz homepage with an API generated image, you will be greeted with a cinematic Star Wars-style opening crawl. Feel the excitement as you embark on a cosmic journey!
@@ -191,31 +201,31 @@ The URL of the GitHub repository:
 ## Screenshots of Deployed App
 The following images shows the web application's appearance and functionality::
 * Homepage App opening and nav toggle
-![opening the code in the browser resulting analysis image](/images/home.png.png)
+![opening the code in the browser resulting analysis image](/images/home.png)
 
 * Homepage footer and hover Start Mission
-![Homepage footer and hover Start Mission](/images/footer.png.png)
+![Homepage footer and hover Start Mission](/images/footer.png)
 
 * QuizPage opening
-![QuizPage opening](/images/quiz.png.png)
+![QuizPage opening](/images/quiz.png)
 
 * Correct Answer Modal
-![Correct Answer Modal](/images/correct.png.png)
+![Correct Answer Modal](/images/correct.png)
 
 * "?" icon for Instruction Modal
-![icon for Instruction Modal](/images/inst.png.png)
+![icon for Instruction Modal](/images/inst.png)
 
 * Wrong Answer Red 
-![Wrong Answer Red](/images/wrong.png.png)
+![Wrong Answer Red](/images/wrong.png)
 
 * Progress Bar moving distance
-![Progress Bar moving distance](/images/progress.png.png)
+![Progress Bar moving distance](/images/progress.png)
 
 * Game Over page, Congratulations and circular feature, with save your name
-![Game Over page, Congratulations and circular feature, with save your name](/images/game.png.png)
+![Game Over page, Congratulations and circular feature, with save your name](/images/game.png)
 
 * Leaderboard 
-![Leaderboard ](/images/leader.png.png)
+![Leaderboard ](/images/leader.png)
 
 * Local Storage - inspecting App
-![Local Storage - inspecting App](/images/local.png.png)
+![Local Storage - inspecting App](/images/local.png)
