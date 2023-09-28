@@ -45,8 +45,41 @@ body#homepage::before {
 }
 
 body#quizpage,
-body#quizend {
+body#quizend,
+body#quizscore {
   background-image: url("../images/star-bg.jpg");
+}
+
+/* container score */
+
+#containerscore .h1 {
+  font-family: "Drius Halftone", sans-serif;
+}
+
+#containerscore {
+  max-width: 800px;
+  padding: 0;
+}
+
+#score-box {
+  margin-bottom: 2rem;
+}
+
+#highScoresList {
+  list-style: none;
+  margin-bottom: 2rem;
+}
+
+#highScoresList li {
+  background-color: #8911ec;
+  /* Set background color */
+  border-radius: 10px;
+  /* Apply border-radius for rounded corners */
+  margin-bottom: 5px;
+  /* Add some margin between each score */
+  padding: 10px;
+  /* Add padding for better spacing */
+  font-family: "Fauna", sans-serif;
 }
 
 /* navigation bar */
@@ -239,12 +272,10 @@ body#quizend {
 
 .p-caption {
   text-align: center;
-  font-style:italic;
+  font-style: italic;
 }
 
-.p-dyk {
-
-}
+.p-dyk {}
 
 .question {
   border-width: 3px;
@@ -297,7 +328,7 @@ body#quizend {
   border-bottom-right-radius: 6px;
 }
 
-#correctModal .modal-body, 
+#correctModal .modal-body,
 #correctModal .modal-footer {
   padding: 6px;
   box-shadow: none;
@@ -530,10 +561,46 @@ footer p {
     font-size: 0.8rem;
     line-height: 1.2rem;
   }
+
   .question {
     font-size: 1.2rem;
   }
+
   .answer {
     font-size: 1.05rem;
+  }
+}
+
+/* quiz end page to show distance travelled*/
+
+.circular-indicator {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  margin: 0 auto;
+  margin-top: 20px;
+  border: 8px solid;
+  background: linear-gradient(45deg, #15bef6, #e100ff);
+  animation: blinkAnimation 2s linear infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.4rem;
+  color: #8be80a;
+  font-weight: bold;
+}
+
+@keyframes blinkAnimation {
+
+  0%,
+  100% {
+    background-size: 0% 100%;
+    border: 8px solid #7ebc28;
+  }
+
+  50% {
+    background-size: 100% 100%;
   }
 }

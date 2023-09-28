@@ -1,41 +1,60 @@
-//
-// NAME AND SCOREBOARD TOGGLE
-//
-//
-let saveButtonClick = document.getElementById("submit-score");
+// Retrieve totalScore from localStorage
+document.addEventListener("DOMContentLoaded", function () {
+  const storedScore = localStorage.getItem("totalScore");
 
-saveButtonClick.addEventListener("click", function () {
-  console.log("wassup");
-  if (leaderBoardToggle.classList.contains("hidden")) {
-    leaderBoardToggle.classList.remove("hidden");
-    endgameToggle.classList.add("hidden");
+  if (storedScore !== null) {
+    // Display the totalScore in the placeholder element
+    const scorePlaceholder = document.querySelector(".this-score");
+    if (scorePlaceholder) {
+      scorePlaceholder.textContent = storedScore;
+    } else {
+      console.error("Element with class 'this-score' not found");
+    }
+  } else {
+    console.log("Total Score not found in localStorage");
   }
 });
-//
-//
-// ADD NAME AND SCORE TO STORAGE
-let scoreBox = document.querySelector(".score-a");
-let playerNameInput = document.querySelector(".yourname");
-//
-//
-saveButtonClick.addEventListener("click", function (event) {
-  event.preventDefault();
+// Add event listener for the "Save" button
+const saveButton = document.getElementById("submit-score");
+saveButton.addEventListener("click", function () {
+  // Your existing logic...
 
-  // Create Player Object
-  let player = {
-    name: playerNameInput.value.trim(),
-  };
+  // Retrieve player name from the input field
+  const playerName = document.getElementById("yourname").value;
 
-  // Validate the fields
-  if (player.name === "") {
-    displayMessage("Error", "First name cannot be empty");
+  // Retrieve total score from localStorage
+  const storedScore = localStorage.getItem("totalScore");
+
+  // Check if the score is stored
+  if (storedScore !== null) {
+    // Display the total score in the console (you can use it to save to high scores)
+    const playerScore = parseInt(storedScore);
+
+    // Call the saveHighScore function
+    saveHighScore(playerName, playerScore);
+
+    // Redirect to the high scores board (score.html)
+    window.location.href = "score.html";
+  } else {
+    console.error("Total Score not found in localStorage");
   }
-
-  // Set new memory
-  localStorage.setItem("user", JSON.stringify(player));
-
-  // Get the most recent submission
-  let lastPlayer = JSON.parse(localStorage.getItem("player"));
-
-  scoreBox.textContent = `${player.name} ----- ${totalScore}`;
 });
+
+
+// Define the saveHighScore function
+function saveHighScore(playerName, playerScore) {
+  // Retrieve existing high scores or initialize an empty array
+  const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+
+  // Add the new score to the array
+  highScores.push({ name: playerName, score: playerScore });
+
+  // Sort the high scores in descending order (highest score first)
+  highScores.sort((a, b) => b.score - a.score);
+
+  // Keep only the top N scores (e.g., top 10)
+  const topScores = highScores.slice(0, 10);
+
+  // Save the updated high scores back to localStorage
+  localStorage.setItem("highScores", JSON.stringify(topScores));
+}
