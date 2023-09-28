@@ -184,37 +184,38 @@ The URL of the deployed application:
 1.   https://github.com/Jeshikha/AstroQuiz
 
 The URL of the GitHub repository:
-2.    
+2.   https://jeshikha.github.io/AstroQuiz/     
+
 
 
 ## Screenshots of Deployed App
 The following images shows the web application's appearance and functionality::
 * Homepage App opening and nav toggle
-![opening the code in the browser resulting analysis image](images/home.png.png)
+![opening the code in the browser resulting analysis image](/images/home.png.png)
 
 * Homepage footer and hover Start Mission
-![Homepage footer and hover Start Mission](images/footer.png.png)
+![Homepage footer and hover Start Mission](/images/footer.png.png)
 
 * QuizPage opening
-![QuizPage opening](images/quiz.png.png)
+![QuizPage opening](/images/quiz.png.png)
 
 * Correct Answer Modal
-![Correct Answer Modal](images/correct.png.png)
+![Correct Answer Modal](/images/correct.png.png)
 
 * "?" icon for Instruction Modal
-![icon for Instruction Modal](images/inst.png.png)
+![icon for Instruction Modal](/images/inst.png.png)
 
 * Wrong Answer Red 
-![Wrong Answer Red](images/wrong.png.png)
+![Wrong Answer Red](/images/wrong.png.png)
 
 * Progress Bar moving distance
-![Progress Bar moving distance](images/progress.png.png)
+![Progress Bar moving distance](/images/progress.png.png)
 
 * Game Over page, Congratulations and circular feature, with save your name
-![Game Over page, Congratulations and circular feature, with save your name](images/game.png.png)
+![Game Over page, Congratulations and circular feature, with save your name](/images/game.png.png)
 
 * Leaderboard 
-![Leaderboard ](images/leader.png.png)
+![Leaderboard ](/images/leader.png.png)
 
 * Local Storage - inspecting App
-![Local Storage - inspecting App](images/local.png.png)
+![Local Storage - inspecting App](/images/local.png.png)
