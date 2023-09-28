@@ -1,4 +1,3 @@
-//let queryURL = `https://api.le-systeme-solaire.net/rest/bodies/earth`;
 let planetName;
 let planetMoons;
 let planetOrbit;
@@ -19,7 +18,7 @@ function buildDYK () {
     dyk+= `${planetName} `;
 
     if (planetName === "Moon") {
-        //
+
     } else if (planetMoons === 0) {
         dyk+= `has 0 moons,`;
     } else if (planetMoons === 1) {
@@ -32,18 +31,5 @@ function buildDYK () {
 
     dyk+= ' and has an average temperature of ' + planetTemp + '\xB0C.';
 
-    //console.log(dyk);
     captionDYK.innerHTML = '<strong>Did you know?</strong> ' + dyk;
-    //captionDYK.textContent = dyk;
 }
-
-//terre
-//lune
-//mercure
-//venus
-//mars
-//jupiter
-//saturne
-//uranus
-//neptune
-//pluton

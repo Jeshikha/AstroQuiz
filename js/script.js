@@ -52,8 +52,6 @@ function answerSelect() {
     // This.textContent uses the 'this' keyword to return the data in the array for that particular button press.
     let option = this.textContent;
     firstLetter = option.charAt(0);
-    console.log(option); // Testing purposes. Remove once code finished.
-    console.log(firstLetter); // Testing purposes. Remove once code finished.
 
     if (questions[questionNumber].answer === firstLetter) {
       totalScore += questionScore;
@@ -62,7 +60,6 @@ function answerSelect() {
       localStorage.setItem("totalScore", totalScore);
       // Show the correct modal for correct answers
       displayCorrectModal();
-      console.log("totalScore: " + totalScore); // Testing purposes. Remove once code finished.
       if (questionNumber < questions.length - 1) {
         questionNumber++;
         injectQuestions(questionNumber);
@@ -79,7 +76,6 @@ function answerSelect() {
       }
     } else {
       checkAnswerClicked(this);
-      console.log("Question Score: " + questionScore); // Testing purposes. Remove once code finished.
       this.style.backgroundColor = "#EA5656";
       pointsAvailableBox.textContent = questionScore;
     }
@@ -147,7 +143,7 @@ function gameOver() {
 //
 // NASA API FETCH FUNCTION
 function fetchAndDisplayImageForNASAId(nasaId, index) {
-  //const apiUrl = `https://images-api.nasa.gov/asset/${nasaId}`;
+  //const apiUrl = `https://images-api.nasa.gov/asset/${nasaId}`; //Use this one for larger images but no alt text
   const apiUrl = `https://images-api.nasa.gov/search?nasa_id=${nasaId}`;
 
   fetch(apiUrl)
@@ -156,7 +152,6 @@ function fetchAndDisplayImageForNASAId(nasaId, index) {
     })
     .then(function (data) {
       if (data.collection.items.length > 0) {
-        console.log(data); //todo rm
         //const imgURL = data.collection.items[0].href;
         const imgURL = data.collection.items[0].links[0].href;
         const imgCap = data.collection.items[0].data[0].title;
@@ -183,7 +178,6 @@ function fetchSolarStats(solaireId) {
     .then(function (response) {
       return response.json();
     }).then(function (data) {
-      console.log(data); //todo rm
       if (data.englishName) {
         planetName = data.englishName;
       }
@@ -223,5 +217,3 @@ function updateDotColors(currentQuestionNumber) {
     }
   });
 }
-//
-//
