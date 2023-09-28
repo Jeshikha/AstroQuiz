@@ -20,6 +20,7 @@ let answerBtn4 = document.querySelector("#select-d");
 let nextQuestion = document.getElementById("next-question");
 let abortMission = document.getElementById("btn-abort");
 let questionImageElement = document.getElementById("question-image"); // Added this line
+let questionCaptionEl = document.querySelector(".p-caption"); // Added this line
 //
 //
 // GAME OVER PAGE EVENT LISTENERS
@@ -69,6 +70,7 @@ function answerSelect() {
         });
         pointsAvailableBox.textContent = questionScore;
         currentScoreBox.textContent = totalScore;
+        window.scrollTo(0,10); //scroll to top of page when new question is populated
       } else {
         gameOver();
       }
@@ -141,7 +143,8 @@ function gameOver() {
 //
 // NASA API FETCH FUNCTION
 function fetchAndDisplayImageForNASAId(nasaId, index) {
-  const apiUrl = `https://images-api.nasa.gov/asset/${nasaId}`;
+  //const apiUrl = `https://images-api.nasa.gov/asset/${nasaId}`;
+  const apiUrl = `https://images-api.nasa.gov/search?nasa_id=${nasaId}`;
 
   fetch(apiUrl)
     .then(function (response) {
@@ -149,12 +152,16 @@ function fetchAndDisplayImageForNASAId(nasaId, index) {
     })
     .then(function (data) {
       if (data.collection.items.length > 0) {
-        const imgURL = data.collection.items[0].href;
+        console.log(data); //todo rm
+        //const imgURL = data.collection.items[0].href;
+        const imgURL = data.collection.items[0].links[0].href;
+        const imgCap = data.collection.items[0].data[0].title;
         const imgEl = document.createElement("img");
         imgEl.setAttribute("src", imgURL);
-        imgEl.setAttribute("alt", `NASA Image`);
+        imgEl.setAttribute("alt", imgCap);
         questionImageElement.innerHTML = ""; // Clear previous images
         questionImageElement.appendChild(imgEl);
+        questionCaptionEl.textContent = imgCap;
       }
     })
     .catch(function (error) {
@@ -172,25 +179,21 @@ function fetchSolarStats(solaireId) {
     .then(function (response) {
       return response.json();
     }).then(function (data) {
-      console.log(data);
+      console.log(data); //todo rm
       if (data.englishName) {
         planetName = data.englishName;
-        console.log(planetName);
       }
 
       if (data.moons) {
         planetMoons = data.moons.length;
-        console.log(planetMoons);
       }
 
       if (data.sideralOrbit) {
         planetOrbit = Math.floor(data.sideralOrbit);
-        console.log(planetOrbit);
       }
-      if (data.avgTemp) {
+      if (data.avgTemp !== null) {
         planetTemp = parseInt(data.avgTemp) - 273.15;
         planetTemp = Math.round((planetTemp + Number.EPSILON) * 100) / 100;
-        console.log(planetTemp);
       }
       buildDYK();
     })

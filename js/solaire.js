@@ -4,7 +4,7 @@ let planetMoons;
 let planetOrbit;
 let planetTemp;
 let orbitee;
-let modalDYK = document.querySelector(".modal-dyk");
+let captionDYK = document.querySelector(".p-dyk");
 
 function buildDYK () {
     let dyk = "";
@@ -30,10 +30,11 @@ function buildDYK () {
 
     dyk+= ` takes ${planetOrbit} days to orbit the ${orbitee}`;
 
-    dyk+= ' and has an average temperature of ' + planetTemp + '\xB0C?';
+    dyk+= ' and has an average temperature of ' + planetTemp + '\xB0C.';
 
-    console.log(dyk);
-    modalDYK.textContent = dyk;
+    //console.log(dyk);
+    captionDYK.innerHTML = '<strong>Did you know?</strong> ' + dyk;
+    //captionDYK.textContent = dyk;
 }
 
 //terre
