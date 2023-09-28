@@ -57,6 +57,9 @@ function answerSelect() {
 
     if (questions[questionNumber].answer === firstLetter) {
       totalScore += questionScore;
+
+      // Local Storage retrieving data for funtioning app
+      localStorage.setItem("totalScore", totalScore);
       // Show the correct modal for correct answers
       displayCorrectModal();
       console.log("totalScore: " + totalScore); // Testing purposes. Remove once code finished.
@@ -70,7 +73,7 @@ function answerSelect() {
         });
         pointsAvailableBox.textContent = questionScore;
         currentScoreBox.textContent = totalScore;
-        window.scrollTo(0,10); //scroll to top of page when new question is populated
+        window.scrollTo(0, 10); //scroll to top of page when new question is populated
       } else {
         gameOver();
       }

@@ -1,5 +1,5 @@
 const apiKey = 'CqWJ0hTZI8DCeDELuvf2vsBNl3CvheYwNVfKESCO';
-const targetDate = '2023-09-26'; // Specify the target date in 'YYYY-MM-DD' format
+const targetDate = '2023-09-28'; // Specify the target date in 'YYYY-MM-DD' format
 
 // Fetch the Astronomy Picture of the Day for the specified date
 fetch(`https://api.nasa.gov/planetary/apod?api_key=${apiKey}&date=${targetDate}`)
