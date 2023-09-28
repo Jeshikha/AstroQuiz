@@ -232,6 +232,20 @@ body#quizend {
   border: 5px solid var(--accent2a);
 }
 
+.img-caption {
+  background-color: var(--accent2a);
+  font-size: 0.95rem;
+}
+
+.p-caption {
+  text-align: center;
+  font-style:italic;
+}
+
+.p-dyk {
+
+}
+
 .question {
   border-width: 3px;
 }
@@ -276,15 +290,17 @@ body#quizend {
   text-decoration: underline;
 }
 
-.next-q-link {
-  text-align: right;
-  font-size: 0.9em;
+/* styling for modal */
+#correctModal .modal-body {
+  background-color: var(--correctgreen);
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
 }
 
-.next-q-link a {
-  color: #555;
-  font-style: italic;
-  margin-right: 2px;
+#correctModal .modal-body, 
+#correctModal .modal-footer {
+  padding: 6px;
+  box-shadow: none;
 }
 
 /*end page*/
@@ -314,7 +330,6 @@ aside {
 /*progress bar*/
 #progress-bar {
   background-color: #777;
-  border-radius: var(--curvedcorner1);
   padding: 10px 4px;
 }
 
@@ -391,8 +406,6 @@ aside {
 }
 
 #btn-abort {
-  display: block;
-  position: absolute;
   bottom: 0px;
   width: 136px;
   height: 136px;
@@ -479,7 +492,29 @@ footer p {
   left: 10px;
 }
 
-/* styling for modal */
-#modalb1 {
-  background-color: #55bd51;
+/*media queries*/
+
+/*medium screen and above*/
+@media screen and (min-width: 991px) {
+  aside {
+    min-height: 1015px;
+  }
+
+  #btn-abort {
+    display: block;
+    position: absolute;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .img-caption {
+    font-size: 0.8rem;
+    line-height: 1.2rem;
+  }
+  .question {
+    font-size: 1.2rem;
+  }
+  .answer {
+    font-size: 1.05rem;
+  }
 }
