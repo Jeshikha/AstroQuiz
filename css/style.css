@@ -395,6 +395,25 @@ aside {
   font-style: italic;
 }
 
+.btn-primary {
+  background-color: var(--accent1a) !important;
+  border-color: var(--accent1a) !important;
+  transition: all 0.1s ease-in-out;
+
+}
+
+.btn-primary:hover,
+.btn-primary:active {
+  transition: all 0.05s ease-in-out;
+  transform: scale(1.1);
+}
+
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus {
+  opacity: 0.8 !important;
+}
+
 #btn-returnhome {
   background-color: var(--accent1a);
   border-color: var(--accent1a);
